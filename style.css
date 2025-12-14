@@ -160,3 +160,35 @@ h2 {
     background: #ffdd88;
     box-shadow: 0 0 12px #ffdd88;
 }
+/* SMOOTH SCROLL */
+html {
+    scroll-behavior: smooth;
+}
+
+/* SECTION REVEAL DEFAULT HIDDEN */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.2s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* BACKGROUND GRID EFFECT */
+#gridCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -10;
+}
+
+/* BACKGROUND PARTICLES */
+#particleCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -9;
+}
