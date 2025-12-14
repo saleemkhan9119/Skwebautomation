@@ -1,206 +1,107 @@
 /* ===========================
    GLOBAL BODY STYLE
 =========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
-
 body {
-    background: #000814; /* Deep space blue-black */
-    overflow-x: hidden;
-    color: #e0eaff;
-}
-
-/* Remove scrollbar (clean UI) */
-body::-webkit-scrollbar {
-    width: 0;
+    background: #000000;
+    color: #ffffff;
 }
 
 /* ===========================
-   CYBER GRID BACKGROUND
-=========================== */
-#gridCanvas, #particleCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-}
-
-/* ===========================
-   NAVBAR
+   NAVBAR + TEXT COLORS
 =========================== */
 header {
-    width: 100%;
-    padding: 15px 30px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0, 8, 20, 0.8);
-    backdrop-filter: blur(7px);
-    border-bottom: 1px solid #0ea5ff;
-    z-index: 999;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px solid #e0b75a;
 }
 
 header h1 {
-    color: #6cd3ff;
-    font-size: 26px;
-    font-weight: 700;
+    color: #ffd978;
 }
 
 header nav a {
-    margin-left: 25px;
-    color: #bfe7ff;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
+    color: #fff3d6;
 }
 
 header nav a:hover {
-    color: #00bfff;
+    color: #ffdd88;
 }
 
 /* ===========================
-   HERO SECTION
+   HERO SECTION GOLDEN STYLE
 =========================== */
-.hero {
-    width: 100%;
-    height: 100vh;
-    padding-top: 120px;
-    text-align: center;
-    position: relative;
+.main-title {
+    color: #ffe9b5;
+    text-shadow: 0 0 15px #ffcc66;
 }
 
-#hologram-container {
-    width: 350px;
-    height: 350px;
-    margin: auto;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 25px #00c8ff);
-}
-
-#holoFace {
-    width: 100%;
-    height: 100%;
-}
-
-/* Glitch Title */
-.glitch {
-    font-size: 38px;
-    color: #bfe7ff;
-    text-shadow: 0 0 10px #7ed8ff;
-    position: relative;
-    margin-bottom: 10px;
-}
-
-/* Subtext */
 .hero-sub {
-    font-size: 18px;
-    color: #8fd8ff;
-    margin-bottom: 20px;
+    color: #ffefc6;
 }
 
-/* Buttons */
 .hero-buttons button {
-    padding: 12px 35px;
-    background: linear-gradient(90deg, #009dff, #00eaff);
-    border: none;
-    border-radius: 8px;
-    color: #00111d;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 0 12px #00d5ff;
-    transition: 0.3s;
+    background: linear-gradient(90deg, #ffcc66, #ffea97);
+    color: #000;
+    box-shadow: 0 0 20px #ffcc66;
 }
 
 .hero-buttons button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #00eaff;
+    box-shadow: 0 0 30px #ffdd88;
 }
 
 /* ===========================
-   SECTIONS
+   HOLOGRAM FACE (GOLD GLOW)
 =========================== */
-section {
-    padding: 100px 40px;
-    text-align: center;
+#hologram-container {
+    filter: drop-shadow(0 0 25px #ffcc55);
 }
 
-h2 {
-    font-size: 34px;
-    color: #88e3ff;
-    margin-bottom: 40px;
-    text-shadow: 0 0 10px #00c3ff;
+#holoFace {
+    filter: drop-shadow(0 0 12px #ffdd88);
 }
 
 /* ===========================
-   BOXES (Services)
+   SECTIONS TITLES
+=========================== */
+h2 {
+    color: #ffe9b5;
+    text-shadow: 0 0 12px #ffcc66;
+}
+
+/* ===========================
+   ALL BOXES
 =========================== */
 .box {
-    border: 1px solid #0ea5ff;
-    padding: 15px;
-    margin: 20px auto;
-    width: 70%;
-    color: #bfe7ff;
-    background: rgba(0, 30, 50, 0.3);
-    backdrop-filter: blur(4px);
-    border-radius: 8px;
-    box-shadow: 0 0 20px #003f66 inset;
-    transition: 0.3s;
+    border: 1px solid #ffcc66;
+    color: #fff7dd;
+    background: rgba(50, 40, 0, 0.4);
+    box-shadow: 0 0 20px #775500 inset;
 }
 
 .box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px #009dff inset;
+    box-shadow: 0 0 25px #ffcc66 inset;
 }
 
 /* ===========================
    WORKFLOW BOXES
 =========================== */
 .workflow-box {
-    width: 70%;
-    padding: 20px;
-    margin: 20px auto;
-    border: 1px solid #009dff;
-    background: rgba(0, 20, 40, 0.3);
-    border-radius: 10px;
-    color: #d7f5ff;
-    font-size: 18px;
-    box-shadow: 0 0 15px #003b66 inset;
+    border: 1px solid #ffcc66;
+    background: rgba(40, 30, 0, 0.35);
+    color: #fff3d6;
+    box-shadow: 0 0 20px #664400 inset;
 }
 
 /* ===========================
    PRICING CARDS
 =========================== */
 .price-card {
-    width: 70%;
-    margin: 25px auto;
-    background: rgba(0, 19, 40, 0.5);
-    border-radius: 12px;
-    padding: 25px;
-    color: #cdeeff;
-    border: 1px solid #00aaff;
-    box-shadow: 0 0 25px #004466 inset;
-    transition: 0.3s;
-}
-
-.price-card:hover {
-    transform: scale(1.05);
+    background: rgba(70, 50, 0, 0.35);
+    border: 1px solid #ffcc66;
+    color: #fff5d6;
 }
 
 .price {
-    font-size: 26px;
-    font-weight: bold;
-    color: #55d6ff;
-    margin-top: 12px;
+    color: #ffdd88;
 }
 
 /* ===========================
@@ -208,127 +109,54 @@ h2 {
 =========================== */
 #contact input,
 #contact textarea {
-    width: 70%;
-    margin: 10px auto;
-    display: block;
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #00aaff;
-    background: rgba(0, 25, 50, 0.5);
-    color: white;
-    font-size: 16px;
+    background: rgba(50, 30, 0, 0.4);
+    border: 1px solid #ffcc66;
+    color: #ffffff;
 }
 
 .send {
-    padding: 12px 35px;
-    background: #00d5ff;
-    border: none;
-    border-radius: 8px;
-    color: #003144;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 15px;
+    background: #ffcc66;
+    color: #000;
 }
 
 /* ===========================
-   CHAT WINDOW
+   CHAT WINDOW GOLD THEME
 =========================== */
 #chat-button {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #00bfff;
-    color: #002233;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 22px;
-    cursor: pointer;
-    box-shadow: 0 0 20px #00cfff;
-    z-index: 999;
+    background: #ffcc55;
+    color: #000;
+    box-shadow: 0 0 20px #ffcc66;
 }
 
 #chat-window {
-    position: fixed;
-    bottom: 90px;
-    right: 25px;
-    width: 320px;
-    background: rgba(0, 18, 36, 0.9);
-    border-radius: 12px;
-    border: 1px solid #00c8ff;
-    box-shadow: 0 0 25px #0077aa;
-    display: none;
-    z-index: 999;
+    background: rgba(20, 12, 0, 0.9);
+    border: 1px solid #ffcc66;
+    box-shadow: 0 0 25px #664400;
 }
 
 #chat-header {
-    padding: 12px;
-    background: #009dff;
-    color: #00131f;
-    font-weight: bold;
-    border-radius: 12px 12px 0 0;
+    background: #ffcc66;
+    color: #000;
 }
 
 #chat-messages {
-    height: 300px;
-    overflow-y: auto;
-    padding: 10px;
-    color: #e4f7ff;
-}
-
-#chat-input {
-    width: 70%;
-    padding: 10px;
-    border: none;
-    background: #002a3d;
-    color: #d4f4ff;
+    color: #fff7dd;
 }
 
 #chat-send {
-    width: 30%;
-    padding: 10px;
-    border: none;
-    background: #00c8ff;
-    color: #002233;
-    cursor: pointer;
+    background: #ffcc66;
+    color: #000;
 }
 
 /* ===========================
-   VOICE BUTTON (Animated Waves)
+   GOLDEN VOICE BUTTON
 =========================== */
 #voice-button {
-    position: fixed;
-    bottom: 25px;
-    left: 25px;
-    width: 70px;
-    height: 70px;
-    background: #002a3d;
-    border-radius: 50%;
-    border: 2px solid #00cfff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 0 0 20px #00cfff;
+    border: 2px solid #ffcc66;
+    box-shadow: 0 0 20px #ffcc66;
 }
 
 #wave1, #wave2, #wave3 {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: #00deff;
-    border-radius: 50%;
-    animation: pulse 1.5s infinite ease-in-out;
+    background: #ffdd88;
+    box-shadow: 0 0 12px #ffdd88;
 }
-
-#wave2 {
-    animation-delay: 0.3s;
-}
-#wave3 {
-    animation-delay: 0.6s;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(5); opacity: 0; }
-    }
