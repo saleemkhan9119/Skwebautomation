@@ -1,4 +1,4 @@
-/* ---------- GLOBAL STYLES ---------- */
+/* ---------- GLOBAL ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -7,209 +7,217 @@
 }
 
 body {
-  background: #f5f7fa;
+  background: #f8f9fc;
   color: #222;
-  line-height: 1.6;
 }
 
 /* ---------- HEADER ---------- */
-header {
-  background: linear-gradient(135deg, #0047AB, #007BFF);
-  padding: 20px 0;
-  color: white;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
-}
-
-.nav-container {
-  width: 90%;
-  margin: auto;
+.header {
+  width: 100%;
+  padding: 18px 40px;
+  background: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid #e6e6e6;
 }
 
-.nav-container h2 {
-  font-size: 28px;
+.logo {
+  font-size: 26px;
   font-weight: 700;
+  color: #0056d6;
 }
 
-nav a {
-  margin-left: 20px;
-  color: white;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links a {
   text-decoration: none;
-  font-size: 16px;
+  color: #333;
+  font-weight: 500;
   transition: 0.3s;
 }
 
-nav a:hover {
-  color: #FFD700;
+.nav-links a:hover {
+  color: #0056d6;
 }
 
-/* ---------- HERO SECTION ---------- */
+/* ---------- HERO ---------- */
 .hero {
-  background: linear-gradient(135deg, #007BFF, #00C6FF);
-  padding: 100px 20px;
-  text-align: center;
+  height: 420px;
+  background: linear-gradient(135deg, #0056d6, #008cff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
+  text-align: center;
+  padding: 20px;
 }
 
 .hero h1 {
   font-size: 42px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .hero p {
-  font-size: 20px;
-  margin-top: 10px;
+  font-size: 18px;
+  margin: 12px 0;
 }
 
-.hero button {
-  margin-top: 25px;
-  padding: 12px 25px;
-  background: #FFD700;
-  color: #000;
-  border: none;
-  font-size: 18px;
+.btn-primary {
+  display: inline-block;
+  padding: 12px 24px;
+  margin-top: 15px;
+  background: #ffdd00;
+  color: black;
+  text-decoration: none;
   border-radius: 6px;
-  cursor: pointer;
+  font-weight: 600;
   transition: 0.3s;
 }
 
-.hero button:hover {
-  background: #FFC300;
+.btn-primary:hover {
+  background: #ffcc00;
 }
 
-/* ---------- SERVICES SECTION ---------- */
+/* ---------- ABOUT ---------- */
+.about {
+  padding: 60px 20px;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.about p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* ---------- SERVICES ---------- */
 .services {
   padding: 60px 20px;
   text-align: center;
+  width: 90%;
+  margin: auto;
 }
 
 .services h2 {
-  font-size: 34px;
-  font-weight: 700;
-  margin-bottom: 40px;
+  font-size: 32px;
+  margin-bottom: 35px;
 }
 
-.service-boxes {
-  display: grid;
-  width: 90%;
-  margin: auto;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.box {
+.service-box {
   background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
+  padding: 22px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.08);
 }
 
-.box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
-}
-
-.box h3 {
+.service-box h3 {
   font-size: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-/* ---------- PRICING SECTION ---------- */
+/* ---------- PRICING ---------- */
 .pricing {
   padding: 60px 20px;
-  background: #eef2f7;
+  width: 90%;
+  margin: auto;
+  text-align: center;
 }
 
 .pricing h2 {
-  text-align: center;
-  font-size: 34px;
-  font-weight: 700;
-  margin-bottom: 40px;
+  font-size: 32px;
+  margin-bottom: 35px;
 }
 
-.price-cards {
-  width: 90%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
-.card {
+.price-card {
   background: white;
   padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.08);
 }
 
-.card h3 {
+.price-card h3 {
   font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 30px;
+  color: #0056d6;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
-.card .price {
+.price-card ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.price-card ul li {
+  margin-bottom: 6px;
+}
+
+/* ---------- PORTFOLIO ---------- */
+.portfolio {
+  padding: 60px 20px;
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+
+.portfolio h2 {
   font-size: 32px;
-  font-weight: 700;
-  margin: 10px 0;
-  color: #007BFF;
+  margin-bottom: 10px;
 }
 
-.card button {
-  margin-top: 15px;
-  background: #007BFF;
-  color: #fff;
-  padding: 10px 25px;
-  border: none;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.card button:hover {
-  background: #005FCC;
-}
-
-/* ---------- CONTACT SECTION ---------- */
+/* ---------- CONTACT ---------- */
 .contact {
   padding: 60px 20px;
   text-align: center;
 }
 
 .contact h2 {
-  font-size: 34px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.contact p {
-  font-size: 18px;
+  font-size: 32px;
   margin-bottom: 15px;
 }
 
-.contact a {
-  font-size: 20px;
+.btn-whatsapp {
+  display: inline-block;
+  margin-top: 12px;
   background: #25D366;
+  padding: 12px 22px;
   color: white;
-  padding: 12px 20px;
   border-radius: 6px;
   text-decoration: none;
+  font-weight: 600;
   transition: 0.3s;
 }
 
-.contact a:hover {
-  background: #1DA955;
+.btn-whatsapp:hover {
+  background: #1ebc59;
 }
 
 /* ---------- FOOTER ---------- */
-footer {
-  margin-top: 60px;
-  background: #222;
-  color: #ddd;
-  padding: 20px;
+.footer {
+  margin-top: 40px;
+  background: #111;
+  color: white;
+  padding: 18px;
   text-align: center;
 }
