@@ -1,171 +1,147 @@
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    background: #000;
-    color: #fff;
 }
 
-/* HEADER */
-.header {
+body {
+    background: #0e0e0e;
+    color: white;
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+    background: rgba(20, 20, 20, 0.7);
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(10px);
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: 700;
     color: gold;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .logo span {
     color: white;
 }
 
-nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: gold;
-    font-size: 18px;
-}
-
-/* HERO */
+/* ---------------- HERO SECTION ---------------- */
 .hero {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    height: 85vh;
+    background: url('https://images.unsplash.com/photo-1518770660439-4636190af475') center/cover no-repeat;
+    position: relative;
+    filter: blur(2px) brightness(50%);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    background: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
 }
 
-.title {
-    font-size: 45px;
-    font-weight: 700;
+.hero-content h1 {
+    font-size: 40px;
+    font-weight: bold;
 }
 
-.title span {
-    color: gold;
-}
-
-.subtitle {
-    font-size: 20px;
-    margin: 10px 0;
-    opacity: 0.8;
-}
-
-.btn {
-    display: inline-block;
+.cta-btn {
     margin-top: 20px;
-    padding: 12px 25px;
+    padding: 15px 25px;
     background: gold;
-    color: #000;
-    font-weight: 600;
-    border-radius: 5px;
+    color: black;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-/* SERVICES */
+/* ---------------- SERVICES ---------------- */
 .services {
-    padding: 50px 20px;
+    padding: 60px 40px;
+}
+
+h2 {
     text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
 }
 
 .service-box {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid gold;
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid gold;
     padding: 20px;
-    margin: 20px auto;
     border-radius: 10px;
-    width: 80%;
+    margin-bottom: 20px;
 }
 
-/* CONTACT */
-.contact form {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: auto;
+/* ---------------- PRICING ---------------- */
+.pricing {
+    padding: 60px 40px;
+    background: #1a1a1a;
 }
 
-input, textarea {
-    background: #111;
+.price-card {
+    border: 2px solid gold;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.price {
+    font-size: 26px;
+    margin-top: 10px;
     color: gold;
-    border: 1px solid gold;
-    padding: 10px;
-    margin: 10px 0;
 }
 
-button {
-    background: gold;
-    color: #000;
+/* ---------------- WORKFLOW ---------------- */
+.workflow {
+    padding: 60px 40px;
+}
+
+.workflow-box {
+    border: 2px solid gold;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background: rgba(255, 215, 0, 0.05);
+}
+
+/* ---------------- CONTACT ---------------- */
+.contact {
+    padding: 60px 40px;
+}
+
+form input, form textarea {
+    width: 100%;
     padding: 12px;
-    border: none;
-    font-size: 18px;
+    margin: 10px 0;
+    background: #000;
+    border: 2px solid gold;
+    color: white;
 }
 
-/* FOOTER */
+form button {
+    width: 100%;
+    padding: 15px;
+    background: gold;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ---------------- FOOTER ---------------- */
 footer {
     text-align: center;
     padding: 20px;
     background: #111;
-    color: gold;
-}
-/* Workflow Section */
-.workflow-section {
-    padding: 60px 20px;
-    background: #000;
-    color: #fff;
-    text-align: center;
-}
-
-.workflow-title {
-    font-size: 32px;
-    font-weight: bold;
-    color: #FFD700;
-    margin-bottom: 10px;
-}
-
-.workflow-subtitle {
-    font-size: 18px;
-    color: #ccc;
-    margin-bottom: 40px;
-}
-
-.workflow-container {
-    max-width: 800px;
-    margin: auto;
-}
-
-.workflow-step {
-    background: rgba(255, 215, 0, 0.08);
-    border-left: 4px solid #FFD700;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    backdrop-filter: blur(6px);
-    transition: 0.3s ease;
-}
-
-.workflow-step:hover {
-    transform: scale(1.03);
-    background: rgba(255, 215, 0, 0.15);
-}
-
-.step-number {
-    width: 40px;
-    height: 40px;
-    background: #FFD700;
-    color: #000;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    margin: auto;
-    margin-bottom: 10px;
-    font-size: 20px;
 }
