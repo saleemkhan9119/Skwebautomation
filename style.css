@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: gold;
+}
+
+.logo span {
+    color: white;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: gold;
+    font-size: 18px;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+}
+
+.title {
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.title span {
+    color: gold;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin: 10px 0;
+    opacity: 0.8;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: gold;
+    color: #000;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+/* SERVICES */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.service-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid gold;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%;
+}
+
+/* CONTACT */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
+
+input, textarea {
+    background: #111;
+    color: gold;
+    border: 1px solid gold;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    background: gold;
+    color: #000;
+    padding: 12px;
+    border: none;
+    font-size: 18px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: gold;
+}
