@@ -1,147 +1,334 @@
+/* ===========================
+   GLOBAL BODY STYLE
+=========================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    background: #0e0e0e;
-    color: white;
+    background: #000814; /* Deep space blue-black */
+    overflow-x: hidden;
+    color: #e0eaff;
 }
 
-/* ---------------- NAVBAR ---------------- */
-.navbar {
-    background: rgba(20, 20, 20, 0.7);
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
+/* Remove scrollbar (clean UI) */
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+/* ===========================
+   CYBER GRID BACKGROUND
+=========================== */
+#gridCanvas, #particleCanvas {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    height: 100%;
+    z-index: -10;
 }
 
-.logo {
-    color: gold;
-    font-size: 28px;
-    font-weight: bold;
+/* ===========================
+   NAVBAR
+=========================== */
+header {
+    width: 100%;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 8, 20, 0.8);
+    backdrop-filter: blur(7px);
+    border-bottom: 1px solid #0ea5ff;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo span {
-    color: white;
+header h1 {
+    color: #6cd3ff;
+    font-size: 26px;
+    font-weight: 700;
 }
 
-/* ---------------- HERO SECTION ---------------- */
-.hero {
-    height: 85vh;
-    background: url('https://images.unsplash.com/photo-1518770660439-4636190af475') center/cover no-repeat;
-    position: relative;
-    filter: blur(2px) brightness(50%);
-}
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.hero-content h1 {
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.cta-btn {
-    margin-top: 20px;
-    padding: 15px 25px;
-    background: gold;
-    color: black;
-    border-radius: 8px;
-    font-weight: bold;
+header nav a {
+    margin-left: 25px;
+    color: #bfe7ff;
     text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-/* ---------------- SERVICES ---------------- */
-.services {
-    padding: 60px 40px;
+header nav a:hover {
+    color: #00bfff;
+}
+
+/* ===========================
+   HERO SECTION
+=========================== */
+.hero {
+    width: 100%;
+    height: 100vh;
+    padding-top: 120px;
+    text-align: center;
+    position: relative;
+}
+
+#hologram-container {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 25px #00c8ff);
+}
+
+#holoFace {
+    width: 100%;
+    height: 100%;
+}
+
+/* Glitch Title */
+.glitch {
+    font-size: 38px;
+    color: #bfe7ff;
+    text-shadow: 0 0 10px #7ed8ff;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+/* Subtext */
+.hero-sub {
+    font-size: 18px;
+    color: #8fd8ff;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.hero-buttons button {
+    padding: 12px 35px;
+    background: linear-gradient(90deg, #009dff, #00eaff);
+    border: none;
+    border-radius: 8px;
+    color: #00111d;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 12px #00d5ff;
+    transition: 0.3s;
+}
+
+.hero-buttons button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00eaff;
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+section {
+    padding: 100px 40px;
+    text-align: center;
 }
 
 h2 {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 30px;
+    font-size: 34px;
+    color: #88e3ff;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px #00c3ff;
 }
 
-.service-box {
-    background: rgba(255, 215, 0, 0.1);
-    border: 2px solid gold;
+/* ===========================
+   BOXES (Services)
+=========================== */
+.box {
+    border: 1px solid #0ea5ff;
+    padding: 15px;
+    margin: 20px auto;
+    width: 70%;
+    color: #bfe7ff;
+    background: rgba(0, 30, 50, 0.3);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    box-shadow: 0 0 20px #003f66 inset;
+    transition: 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #009dff inset;
+}
+
+/* ===========================
+   WORKFLOW BOXES
+=========================== */
+.workflow-box {
+    width: 70%;
     padding: 20px;
+    margin: 20px auto;
+    border: 1px solid #009dff;
+    background: rgba(0, 20, 40, 0.3);
     border-radius: 10px;
-    margin-bottom: 20px;
+    color: #d7f5ff;
+    font-size: 18px;
+    box-shadow: 0 0 15px #003b66 inset;
 }
 
-/* ---------------- PRICING ---------------- */
-.pricing {
-    padding: 60px 40px;
-    background: #1a1a1a;
-}
-
+/* ===========================
+   PRICING CARDS
+=========================== */
 .price-card {
-    border: 2px solid gold;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    text-align: center;
+    width: 70%;
+    margin: 25px auto;
+    background: rgba(0, 19, 40, 0.5);
+    border-radius: 12px;
+    padding: 25px;
+    color: #cdeeff;
+    border: 1px solid #00aaff;
+    box-shadow: 0 0 25px #004466 inset;
+    transition: 0.3s;
+}
+
+.price-card:hover {
+    transform: scale(1.05);
 }
 
 .price {
     font-size: 26px;
-    margin-top: 10px;
-    color: gold;
-}
-
-/* ---------------- WORKFLOW ---------------- */
-.workflow {
-    padding: 60px 40px;
-}
-
-.workflow-box {
-    border: 2px solid gold;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    background: rgba(255, 215, 0, 0.05);
-}
-
-/* ---------------- CONTACT ---------------- */
-.contact {
-    padding: 60px 40px;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    background: #000;
-    border: 2px solid gold;
-    color: white;
-}
-
-form button {
-    width: 100%;
-    padding: 15px;
-    background: gold;
-    border: none;
     font-weight: bold;
+    color: #55d6ff;
+    margin-top: 12px;
+}
+
+/* ===========================
+   CONTACT FORM
+=========================== */
+#contact input,
+#contact textarea {
+    width: 70%;
+    margin: 10px auto;
+    display: block;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #00aaff;
+    background: rgba(0, 25, 50, 0.5);
+    color: white;
     font-size: 16px;
 }
 
-/* ---------------- FOOTER ---------------- */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
+.send {
+    padding: 12px 35px;
+    background: #00d5ff;
+    border: none;
+    border-radius: 8px;
+    color: #003144;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
 }
+
+/* ===========================
+   CHAT WINDOW
+=========================== */
+#chat-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #00bfff;
+    color: #002233;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #00cfff;
+    z-index: 999;
+}
+
+#chat-window {
+    position: fixed;
+    bottom: 90px;
+    right: 25px;
+    width: 320px;
+    background: rgba(0, 18, 36, 0.9);
+    border-radius: 12px;
+    border: 1px solid #00c8ff;
+    box-shadow: 0 0 25px #0077aa;
+    display: none;
+    z-index: 999;
+}
+
+#chat-header {
+    padding: 12px;
+    background: #009dff;
+    color: #00131f;
+    font-weight: bold;
+    border-radius: 12px 12px 0 0;
+}
+
+#chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    color: #e4f7ff;
+}
+
+#chat-input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    background: #002a3d;
+    color: #d4f4ff;
+}
+
+#chat-send {
+    width: 30%;
+    padding: 10px;
+    border: none;
+    background: #00c8ff;
+    color: #002233;
+    cursor: pointer;
+}
+
+/* ===========================
+   VOICE BUTTON (Animated Waves)
+=========================== */
+#voice-button {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 70px;
+    height: 70px;
+    background: #002a3d;
+    border-radius: 50%;
+    border: 2px solid #00cfff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 20px #00cfff;
+}
+
+#wave1, #wave2, #wave3 {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #00deff;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+#wave2 {
+    animation-delay: 0.3s;
+}
+#wave3 {
+    animation-delay: 0.6s;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(5); opacity: 0; }
+    }
