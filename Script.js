@@ -1,6 +1,6 @@
-// ---------- SMOOTH SCROLL ----------
+// --------- Smooth Scrolling ----------
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
+    anchor.addEventListener("click", function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute("href")).scrollIntoView({
             behavior: "smooth"
@@ -8,25 +8,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ---------- NAVBAR SHADOW ON SCROLL ----------
-window.addEventListener("scroll", () => {
-    const header = document.querySelector("header");
-    if (window.scrollY > 50) {
-        header.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2)";
+// --------- Navbar Shadow on Scroll ----------
+window.addEventListener("scroll", function () {
+    const header = document.querySelector(".header");
+    if (window.scrollY > 20) {
+        header.style.boxShadow = "0 3px 8px rgba(0,0,0,0.1)";
     } else {
         header.style.boxShadow = "none";
     }
 });
 
-// ---------- FADE-IN ANIMATIONS ----------
-const elements = document.querySelectorAll(".fade");
+// --------- Fade-in Effect (Auto Animation) ----------
+const elements = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add("fade-visible");
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0px)";
         }
     });
-});
+}, { threshold: 0.2 });
 
-elements.forEach(el => observer.observe(el));
+elements.forEach(el => {
+    el.style.opacity = 0;
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "0.7s ease";
+    observer.observe(el);
+});
