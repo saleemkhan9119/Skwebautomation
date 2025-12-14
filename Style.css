@@ -1,0 +1,215 @@
+/* ---------- GLOBAL STYLES ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(135deg, #0047AB, #007BFF);
+  padding: 20px 0;
+  color: white;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-container h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+nav a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #FFD700;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+  background: linear-gradient(135deg, #007BFF, #00C6FF);
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.hero button {
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: #FFD700;
+  color: #000;
+  border: none;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: #FFC300;
+}
+
+/* ---------- SERVICES SECTION ---------- */
+.services {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.service-boxes {
+  display: grid;
+  width: 90%;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.box {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
+}
+
+.box h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* ---------- PRICING SECTION ---------- */
+.pricing {
+  padding: 60px 20px;
+  background: #eef2f7;
+}
+
+.pricing h2 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.price-cards {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.card .price {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #007BFF;
+}
+
+.card button {
+  margin-top: 15px;
+  background: #007BFF;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #005FCC;
+}
+
+/* ---------- CONTACT SECTION ---------- */
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.contact a {
+  font-size: 20px;
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact a:hover {
+  background: #1DA955;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  margin-top: 60px;
+  background: #222;
+  color: #ddd;
+  padding: 20px;
+  text-align: center;
+}
