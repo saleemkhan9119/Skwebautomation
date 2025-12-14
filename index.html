@@ -1,106 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SK Automation – AI Powered Automation</title>
-<link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SK Automation</title>
+
+<style>
+
+/* ----------------- Global Design ----------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000; 
+    color: #FFD700; /* Golden Color */
+}
+
+/* ----------------- Navbar ----------------- */
+header {
+    background: #111;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #FFD700;
+}
+
+header h1 {
+    margin: 0;
+    color: #FFD700;
+    font-size: 28px;
+}
+
+nav a {
+    color: #FFD700;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-shadow: 0px 0px 10px #FFD700;
+}
+
+/* ----------------- HERO SECTION (NEW) ----------------- */
+
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+    background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80') no-repeat center/cover;
+    position: relative;
+}
+
+/* Dark overlay for readability */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(3px);
+}
+
+.hero * {
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 48px;
+    color: #FFD700;
+    text-shadow: 0px 0px 10px #FFD700;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #FFF;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #FFD700;
+    color: #000;
+    border: none;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hero button:hover {
+    background: #fff;
+}
+
+/* ----------------- SERVICES SECTION ----------------- */
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 40px;
+    text-shadow: 0px 0px 10px #FFD700;
+}
+
+.box {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 25px;
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    background: #111;
+    font-size: 20px;
+}
+
+/* ----------------- WORKFLOW SECTION (BLACK + GOLDEN) ----------------- */
+
+.workflow-box {
+    max-width: 700px;
+    margin: 25px auto;
+    padding: 20px;
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    background: #111;
+    color: #FFD700;
+    font-size: 22px;
+}
+
+.workflow-title {
+    color: #FFD700;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+/* ----------------- PRICING SECTION ----------------- */
+
+.price-card {
+    background: #111;
+    border: 2px solid #FFD700;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 650px;
+}
+
+.price-card h3 {
+    font-size: 28px;
+    color: #FFD700;
+}
+
+.price-card ul {
+    text-align: left;
+    line-height: 28px;
+}
+
+.price {
+    font-size: 32px;
+    margin-top: 10px;
+    color: #FFD700;
+    text-shadow: 0px 0px 10px #FFD700;
+}
+
+/* ----------------- CONTACT ----------------- */
+
+input, textarea {
+    width: 90%;
+    padding: 12px;
+    background: #000;
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+button.send {
+    width: 90%;
+    padding: 12px;
+    background: #FFD700;
+    border: none;
+    color: #000;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    background: #111;
+    color: #FFD700;
+    border-top: 2px solid #FFD700;
+}
+
+</style>
 </head>
+
 <body>
 
-<header class="navbar">
-    <div class="logo">SK <span>Automation</span></div>
-    <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#workflow">Workflow</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+<!-- -------------------- NAVBAR -------------------- -->
+<header>
+    <h1>SK Automation</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#contact">Contact</a>
+    </nav>
 </header>
 
+<!-- -------------------- HERO SECTION -------------------- -->
 <section class="hero" id="home">
-    <div class="hero-content">
-        <h1>AI Powered Automation</h1>
-        <p>Transforming businesses with cutting-edge automation technology.</p>
-        <a href="#services" class="cta-btn">Explore Services</a>
+    <h2>AI Powered Automation</h2>
+    <p>Transforming businesses with cutting-edge AI technology.</p>
+    <button>Explore Services</button>
+</section>
+
+<!-- -------------------- SERVICES -------------------- -->
+<section id="services">
+    <h2>Our AI Services</h2>
+
+    <div class="box">
+        🤖 <b>AI Agent Creation</b><br>
+        Smart agents that reply automatically and handle workflows.
+    </div>
+
+    <div class="box">
+        ⚙️ <b>Business Automation</b><br>
+        Full automation setup for leads, CRM, messaging, follow-ups.
+    </div>
+
+    <div class="box">
+        🌐 <b>Website + AI Integration</b><br>
+        Modern website + AI chatbot + auto-response system.
+    </div>
+
+</section>
+
+<!-- -------------------- WORKFLOW SECTION -------------------- -->
+<section id="workflow">
+    <h2 class="workflow-title">AI Agent Workflow</h2>
+
+    <div class="workflow-box">
+        📩 User Message → 🧠 AI Processing → ⚙ Automation Tasks → 📤 Auto Reply
+    </div>
+
+    <div class="workflow-box">
+        📝 Lead Capture → 🔁 Auto Follow-up → 📊 CRM Update → 🚀 Conversion Boost
+    </div>
+
+    <div class="workflow-box">
+        🤖 AI Agent monitors customer behaviour → Sends alerts → Auto-books calls
     </div>
 </section>
 
-<section class="services" id="services">
-<h2>Our AI Services</h2>
+<!-- -------------------- PRICING -------------------- -->
+<section id="pricing">
+    <h2>Pricing Plans</h2>
 
-<div class="service-box">
-    <h3>🤖 AI Agent Creation</h3>
-    <p>Custom AI agents that automate WhatsApp, websites, CRM, billing, support, and lead management.</p>
-</div>
+    <div class="price-card">
+        <h3>Basic AI Agent</h3>
+        <ul>
+            <li>Auto reply bot</li>
+            <li>Simple workflow</li>
+            <li>Email notifications</li>
+        </ul>
+        <div class="price">₹499 / month</div>
+    </div>
 
-<div class="service-box">
-    <h3>⚙️ Automation Setup</h3>
-    <p>Complete workflow automation for business operations.</p>
-</div>
-
-<div class="service-box">
-    <h3>💬 AI Chatbot Development</h3>
-    <p>Smart chatbots that reply automatically and improve support.</p>
-</div>
-
-<div class="service-box">
-    <h3>🌐 Website Development</h3>
-    <p>Modern, fast & responsive websites for your business.</p>
-</div>
-
-</section>
-
-<section class="pricing" id="pricing">
-<h2>Pricing Plans</h2>
-
-<div class="price-card">
-    <h3>Starter Plan</h3>
-    <p>AI Chatbot + Basic Automation</p>
-    <div class="price">₹499 / month</div>
-</div>
-
-<div class="price-card">
-    <h3>Business Plan</h3>
-    <p>AI Agent + CRM Automation</p>
-    <div class="price">₹999 / month</div>
-</div>
-
-<div class="price-card">
-    <h3>Premium AI Suite</h3>
-    <p>Full automation + WhatsApp AI Agent + Website AI</p>
-    <div class="price">₹1999 / month</div>
-</div>
-</section>
-
-<section class="workflow" id="workflow">
-<h2>AI Agent Workflow</h2>
-
-<div class="workflow-box">
-    <p>📥 User Message → 🧠 AI Processing → ⚙ Automation Tasks → 📤 Auto Reply</p>
-</div>
-
-<div class="workflow-box">
-    <p>📝 Lead Capture → 🔄 Auto Follow-up → 📊 CRM Update → 🚀 Conversion Boost</p>
-</div>
+    <div class="price-card">
+        <h3>Pro Automation Suite</h3>
+        <ul>
+            <li>Advanced AI Agent</li>
+            <li>CRM integration</li>
+            <li>Lead Follow-up Automation</li>
+            <li>Dashboard Reporting</li>
+        </ul>
+        <div class="price">₹1499 / month</div>
+    </div>
 
 </section>
 
-<section class="contact" id="contact">
-<h2>Contact Us</h2>
-<form>
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <textarea placeholder="Message" required></textarea>
-    <button type="submit">Send Message</button>
-</form>
+<!-- -------------------- CONTACT -------------------- -->
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea placeholder="Message"></textarea>
+    <button class="send">Send Message</button>
 </section>
 
 <footer>
-    © 2025 SK Web Automation | All Rights Reserved
+© 2025 SK Web Automation | All Rights Reserved
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
