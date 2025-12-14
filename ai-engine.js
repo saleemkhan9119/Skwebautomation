@@ -1,3 +1,4 @@
+<script src="background.js"></script>
 /* =====================================================
    V5 ULTRA AI ENGINE — SAIM + SOFIA SUPER BRAIN
    Intro Voice • Memory • Mood System • Dual AI Logic
