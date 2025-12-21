@@ -3,190 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK Automation — AI Agents & Automation Systems</title>
-
+    <title>SK Automation | AI Agents & Workflow</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- BACKGROUND CANVASES -->
-    <canvas id="gridCanvas"></canvas>
-    <canvas id="particleCanvas"></canvas>
+    <nav class="navbar">
+        <div class="logo">SK Automation <span class="ai-badge">AI</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact" class="btn-nav">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-icon"><i class="fa-solid fa-bars"></i></div>
+    </nav>
 
-    <!-- ================= NAVBAR ================= -->
-    <header>
-        <h1>SK Automation</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#ai-system">AI System</a>
-            <a href="#features">Features</a>
-            <a href="#automation">Automation</a>
-            <a href="#agents">AI Agents</a>
-            <a href="#workflow">Workflow</a>
-            <a href="#usecases">Use Cases</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-        </nav>
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <span class="status-pill"><i class="fa-solid fa-circle-dot"></i> System Online</span>
+            <h1>Meet <span class="highlight">Saim & Sofia</span></h1>
+            <p>Your Dual-Personality AI Workforce. Saim handles the logic. Sofia handles the conversation.</p>
+            
+            <div class="hero-buttons">
+                <button id="activate-btn" class="btn-primary"><i class="fa-solid fa-power-off"></i> Activate AI</button>
+                <button class="btn-secondary"><i class="fa-solid fa-play"></i> Watch Demo</button>
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="hologram-circle">
+                <div class="face-scan"></div>
+            </div>
+        </div>
     </header>
 
-    <!-- ================= HERO SECTION ================= -->
-    <section class="hero" id="home">
-
-        <div id="hologram-container">
-            <canvas id="holoFace"></canvas>
-        </div>
-
-        <h2 class="main-title">SK Advanced AI System</h2>
-
-        <p class="hero-sub">
-            Dual AI Personalities • Voice-to-Voice Interaction • Auto Language AI
-        </p>
-
-        <div class="hero-buttons">
-            <button id="activateAI">Activate AI</button>
-        </div>
-
-    </section>
-
-    <!-- ================= AI INTRO SECTION ================= -->
-    <section id="ai-system">
-        <h2>Meet Your AI Assistants: Saim & Sofia</h2>
-        <p>
-            SK Automation brings you a revolutionary dual-personality AI engine.  
-            <br><br>
-            <b>Saim</b> handles technical, complex, analytical tasks.  
-            <br>
-            <b>Sofia</b> handles friendly talk, explanations, guidance, training.  
-            <br><br>
-            Together, they form a powerful conversational system capable of  
-            speaking, understanding, analysing and automating business processes.
-        </p>
-    </section>
-
-    <!-- ================= FEATURES ================= -->
-    <section id="features">
-        <h2>AI System Features</h2>
-
-        <div class="box">🎙️ Voice Recognition (Hindi + English)</div>
-        <div class="box">🧠 AI Memory Mode (Remembers user inputs)</div>
-        <div class="box">🤖 Dual Personality AI (Saim + Sofia)</div>
-        <div class="box">🔁 Automatic Voice Switching</div>
-        <div class="box">💬 ChatGPT Style Chat Window</div>
-        <div class="box">🌐 Multi-language Detection Engine</div>
-        <div class="box">⚙️ Automation Integration</div>
-        <div class="box">📡 Lead Capture + Follow-Up System</div>
-    </section>
-
-    <!-- ================= AUTOMATION SECTION ================= -->
-    <section id="automation">
-        <h2>Automation Solutions</h2>
-
-        <div class="box">WhatsApp Automation (Auto replies, bookings, updates)</div>
-        <div class="box">Website Automation (Interactive AI agent)</div>
-        <div class="box">Sales Automation (Follow-up, reminders, closure)</div>
-        <div class="box">CRM Automation (Lead routing, actions, alerts)</div>
-        <div class="box">Appointment Automation (Doctors, salons, services)</div>
-        <div class="box">Restaurant Automation (Order handling + bookings)</div>
-    </section>
-
-    <!-- ================= AI AGENTS ================= -->
-    <section id="agents">
-        <h2>Types of AI Agents</h2>
-
-        <div class="box">👨‍🍳 Restaurant AI Agent</div>
-        <div class="box">👨‍⚕️ Hospital AI Agent</div>
-        <div class="box">🏢 Business Sales Agent</div>
-        <div class="box">📞 Calling Follow-up Agent</div>
-        <div class="box">📚 Education AI Assistant</div>
-        <div class="box">💼 Master AI Agent (Multi-bot System)</div>
-    </section>
-
-    <!-- ================= WORKFLOW 2.0 ================= -->
-    <section id="workflow">
-        <h2>AI Workflow 2.0</h2>
-
-        <div class="workflow-box">User → Saim (Technical Analysis)</div>
-        <div class="workflow-box">Saim → Sofia (Explanation + Summary)</div>
-        <div class="workflow-box">AI → Automation Engine</div>
-        <div class="workflow-box">Automation Engine → Actions + Results</div>
-    </section>
-
-    <!-- ================= USE CASES ================= -->
-    <section id="usecases">
-        <h2>Where AI Works Best</h2>
-
-        <div class="box">Restaurants — Order handling + Table booking</div>
-        <div class="box">Doctors — Appointment + Report explanation</div>
-        <div class="box">Hospitals — Patient management + reminders</div>
-        <div class="box">Real Estate — Lead follow-up + mapping</div>
-        <div class="box">Education — Student support + exam help</div>
-        <div class="box">E-commerce — Product queries + tracking</div>
-    </section>
-
-    <!-- ================= PRICING ================= -->
-    <section id="pricing">
-        <h2>Pricing Plans</h2>
-
-        <div class="price-card">
-            <h3>Starter AI Agent</h3>
-            <p>Auto replies + Basic automations</p>
-            <div class="price">₹499 / month</div>
-        </div>
-
-        <div class="price-card">
-            <h3>Business AI Suite</h3>
-            <p>WhatsApp AI + CRM + Automation</p>
-            <div class="price">₹1499 / month</div>
-        </div>
-
-        <div class="price-card">
-            <h3>Enterprise AI Suite</h3>
-            <p>End-to-end business automation + calling AI</p>
-            <div class="price">₹4999 / month</div>
+    <section id="features" class="features-section">
+        <h2>System Capabilities</h2>
+        <div class="grid-container">
+            <div class="card">
+                <i class="fa-solid fa-brain icon-glow"></i>
+                <h3>Dual Logic Core</h3>
+                <p>Seamless switching between technical analysis and friendly user support.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-microphone-lines icon-glow"></i>
+                <h3>Voice Interaction</h3>
+                <p>Full duplex voice-to-voice communication in Hindi & English.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-memory icon-glow"></i>
+                <h3>Active Memory</h3>
+                <p>Remembers past interactions and context for smarter replies.</p>
+            </div>
         </div>
     </section>
 
-    <!-- ================= FAQ ================= -->
-    <section id="faq">
-        <h2>Frequently Asked Questions</h2>
-
-        <div class="box">What is an AI agent?</div>
-        <div class="box">Can AI automate my business?</div>
-        <div class="box">Does AI support Hindi + English?</div>
-        <div class="box">Can I use SAIM & SOFIA together?</div>
-        <div class="box">How does automation help in sales?</div>
-    </section>
-
-    <!-- ================= CONTACT ================= -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-
-        <input type="text" placeholder="Your Name">
-        <input type="email" placeholder="Your Email">
-        <textarea placeholder="Your Message"></textarea>
-        <button class="send">Send Message</button>
-    </section>
-
-    <!-- ================= CHAT & VOICE BUTTON ================= -->
-    <div id="chat-button">💬</div>
-
-    <div id="chat-window">
-        <div id="chat-header">SK AI Assistant</div>
-        <div id="chat-messages"></div>
-        <input id="chat-input" type="text" placeholder="Type a message...">
-        <button id="chat-send">Send</button>
+    <div id="chat-interface" class="chat-overlay hidden">
+        <div class="chat-box">
+            <div class="chat-header">
+                <span>AI Agent Active</span>
+                <button id="close-chat"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="chat-history" class="chat-content">
+                <div class="ai-msg">Hello! I am ready. Do you need Saim (Technical) or Sofia (Support)?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="Type your command...">
+                <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                <button id="mic-btn"><i class="fa-solid fa-microphone"></i></button>
+            </div>
+        </div>
     </div>
 
-    <div id="voice-button">
-        <div id="wave1"></div>
-        <div id="wave2"></div>
-        <div id="wave3"></div>
-    </div>
-
-    <script src="hologram.js"></script>
     <script src="ai-engine.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
