@@ -3,85 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK Automation | AI Agents & Workflow</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <title>SK Master AI | The Central Brain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">SK Automation <span class="ai-badge">AI</span></div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact" class="btn-nav">Contact</a></li>
-        </ul>
-        <div class="mobile-menu-icon"><i class="fa-solid fa-bars"></i></div>
+    <nav class="glass-nav">
+        <div class="logo">SK Automation <span class="badge">PRO</span></div>
+        <button id="activate-btn" class="btn-glow">Launch Sofia <i class="fa-solid fa-sparkles"></i></button>
     </nav>
 
-    <header id="home" class="hero">
+    <header class="hero-section">
+        <div class="glow-effect"></div>
         <div class="hero-content">
-            <span class="status-pill"><i class="fa-solid fa-circle-dot"></i> System Online</span>
-            <h1>Meet <span class="highlight">Saim & Sofia</span></h1>
-            <p>Your Dual-Personality AI Workforce. Saim handles the logic. Sofia handles the conversation.</p>
-            
-            <div class="hero-buttons">
-                <button id="activate-btn" class="btn-primary"><i class="fa-solid fa-power-off"></i> Activate AI</button>
-                <button class="btn-secondary"><i class="fa-solid fa-play"></i> Watch Demo</button>
-            </div>
-        </div>
-        
-        <div class="hero-visual">
-            <div class="hologram-circle">
-                <div class="face-scan"></div>
-            </div>
+            <span class="pill">MASTER AGENT ACTIVE</span>
+            <h1>One Brain. <br>Infinite Possibilities.</h1>
+            <p>Meet <strong>Sofia</strong>, your Master AI Agent. She doesn't just chat; she orchestrates your entire business automation, manages sub-agents, and executes complex workflows instantly.</p>
         </div>
     </header>
 
-    <section id="features" class="features-section">
-        <h2>System Capabilities</h2>
-        <div class="grid-container">
-            <div class="card">
-                <i class="fa-solid fa-brain icon-glow"></i>
-                <h3>Dual Logic Core</h3>
-                <p>Seamless switching between technical analysis and friendly user support.</p>
+    <section class="master-features">
+        <h2>Master Agent Capabilities</h2>
+        <div class="grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>Central Orchestration</h3>
+                <p>Sofia controls all other sub-agents (Sales, Support, HR) from a single command center.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-microphone-lines icon-glow"></i>
-                <h3>Voice Interaction</h3>
-                <p>Full duplex voice-to-voice communication in Hindi & English.</p>
+            <div class="feature-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Instant Execution</h3>
+                <p>Real-time task processing with 0.1s latency. No waiting.</p>
             </div>
-            <div class="card">
-                <i class="fa-solid fa-memory icon-glow"></i>
-                <h3>Active Memory</h3>
-                <p>Remembers past interactions and context for smarter replies.</p>
+            <div class="feature-card">
+                <i class="fa-solid fa-database"></i>
+                <h3>Deep Context Memory</h3>
+                <p>Remembers every interaction, client detail, and preference forever.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-robot"></i>
+                <h3>Self-Correction</h3>
+                <p>Automatically detects errors in workflows and fixes them without human help.</p>
             </div>
         </div>
     </section>
 
-    <div id="chat-interface" class="chat-overlay hidden">
-        <div class="chat-box">
-            <div class="chat-header">
-                <span>AI Agent Active</span>
-                <button id="close-chat"><i class="fa-solid fa-xmark"></i></button>
+    <div id="chat-interface" class="chat-container hidden">
+        <div class="chat-header">
+            <div class="agent-info">
+                <div class="avatar">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Sofia">
+                    <div class="status-dot"></div>
+                </div>
+                <div>
+                    <h4>Sofia (Master AI)</h4>
+                    <span class="status-text">Online & Ready</span>
+                </div>
             </div>
-            <div id="chat-history" class="chat-content">
-                <div class="ai-msg">Hello! I am ready. Do you need Saim (Technical) or Sofia (Support)?</div>
+            <button id="close-chat"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        
+        <div id="chat-history" class="chat-body">
             </div>
-            <div class="chat-input-area">
-                <input type="text" id="user-input" placeholder="Type your command...">
+
+        <div class="chat-footer">
+            <div class="quick-actions">
+                <button onclick="quickReply('Check System Status')">System Status</button>
+                <button onclick="quickReply('Show Pricing')">Pricing</button>
+            </div>
+            <div class="input-group">
+                <input type="text" id="user-input" placeholder="Ask Sofia anything...">
                 <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
-                <button id="mic-btn"><i class="fa-solid fa-microphone"></i></button>
             </div>
         </div>
     </div>
 
-    <script src="ai-engine.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
