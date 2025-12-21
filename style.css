@@ -1,194 +1,216 @@
-/* ===========================
-   GLOBAL BODY STYLE
-=========================== */
+/* Base Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
-    background: #000000;
+    background-color: #050505; /* Deep Black */
     color: #ffffff;
+    overflow-x: hidden;
 }
 
-/* ===========================
-   NAVBAR + TEXT COLORS
-=========================== */
-header {
-    background: rgba(0, 0, 0, 0.8);
-    border-bottom: 1px solid #e0b75a;
-}
-
-header h1 {
-    color: #ffd978;
-}
-
-header nav a {
-    color: #fff3d6;
-}
-
-header nav a:hover {
-    color: #ffdd88;
-}
-
-/* ===========================
-   HERO SECTION GOLDEN STYLE
-=========================== */
-.main-title {
-    color: #ffe9b5;
-    text-shadow: 0 0 15px #ffcc66;
-}
-
-.hero-sub {
-    color: #ffefc6;
-}
-
-.hero-buttons button {
-    background: linear-gradient(90deg, #ffcc66, #ffea97);
-    color: #000;
-    box-shadow: 0 0 20px #ffcc66;
-}
-
-.hero-buttons button:hover {
-    box-shadow: 0 0 30px #ffdd88;
-}
-
-/* ===========================
-   HOLOGRAM FACE (GOLD GLOW)
-=========================== */
-#hologram-container {
-    filter: drop-shadow(0 0 25px #ffcc55);
-}
-
-#holoFace {
-    filter: drop-shadow(0 0 12px #ffdd88);
-}
-
-/* ===========================
-   SECTIONS TITLES
-=========================== */
-h2 {
-    color: #ffe9b5;
-    text-shadow: 0 0 12px #ffcc66;
-}
-
-/* ===========================
-   ALL BOXES
-=========================== */
-.box {
-    border: 1px solid #ffcc66;
-    color: #fff7dd;
-    background: rgba(50, 40, 0, 0.4);
-    box-shadow: 0 0 20px #775500 inset;
-}
-
-.box:hover {
-    box-shadow: 0 0 25px #ffcc66 inset;
-}
-
-/* ===========================
-   WORKFLOW BOXES
-=========================== */
-.workflow-box {
-    border: 1px solid #ffcc66;
-    background: rgba(40, 30, 0, 0.35);
-    color: #fff3d6;
-    box-shadow: 0 0 20px #664400 inset;
-}
-
-/* ===========================
-   PRICING CARDS
-=========================== */
-.price-card {
-    background: rgba(70, 50, 0, 0.35);
-    border: 1px solid #ffcc66;
-    color: #fff5d6;
-}
-
-.price {
-    color: #ffdd88;
-}
-
-/* ===========================
-   CONTACT FORM
-=========================== */
-#contact input,
-#contact textarea {
-    background: rgba(50, 30, 0, 0.4);
-    border: 1px solid #ffcc66;
-    color: #ffffff;
-}
-
-.send {
-    background: #ffcc66;
-    color: #000;
-}
-
-/* ===========================
-   CHAT WINDOW GOLD THEME
-=========================== */
-#chat-button {
-    background: #ffcc55;
-    color: #000;
-    box-shadow: 0 0 20px #ffcc66;
-}
-
-#chat-window {
-    background: rgba(20, 12, 0, 0.9);
-    border: 1px solid #ffcc66;
-    box-shadow: 0 0 25px #664400;
-}
-
-#chat-header {
-    background: #ffcc66;
-    color: #000;
-}
-
-#chat-messages {
-    color: #fff7dd;
-}
-
-#chat-send {
-    background: #ffcc66;
-    color: #000;
-}
-
-/* ===========================
-   GOLDEN VOICE BUTTON
-=========================== */
-#voice-button {
-    border: 2px solid #ffcc66;
-    box-shadow: 0 0 20px #ffcc66;
-}
-
-#wave1, #wave2, #wave3 {
-    background: #ffdd88;
-    box-shadow: 0 0 12px #ffdd88;
-}
-/* SMOOTH SCROLL */
-html {
-    scroll-behavior: smooth;
-}
-
-/* SECTION REVEAL DEFAULT HIDDEN */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 1.2s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0px);
-}
-
-/* BACKGROUND GRID EFFECT */
-#gridCanvas {
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(5, 5, 5, 0.9);
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -10;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #333;
 }
 
-/* BACKGROUND PARTICLES */
-#particleCanvas {
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e0cea4; /* Gold-ish */
+}
+
+.ai-badge {
+    background: #e0cea4;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e0cea4;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 60px;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #050505 70%);
+}
+
+.status-pill {
+    background: rgba(0, 255, 0, 0.1);
+    color: #00ff88;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.highlight {
+    color: #e0cea4;
+    text-shadow: 0 0 20px rgba(224, 206, 164, 0.3);
+}
+
+.hero p {
+    color: #888;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(45deg, #e0cea4, #bfa065);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(224, 206, 164, 0.5);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #555;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Features Grid */
+.features-section {
+    padding: 80px 5%;
+}
+
+.features-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #222;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #e0cea4;
+    transform: translateY(-5px);
+}
+
+.icon-glow {
+    font-size: 2rem;
+    color: #e0cea4;
+    margin-bottom: 20px;
+}
+
+/* Chat Overlay */
+.hidden { display: none; }
+
+.chat-overlay {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: -9;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    z-index: 2000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.chat-header {
+    background: #222;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+}
+
+.chat-content {
+    height: 300px;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.chat-input-area {
+    padding: 10px;
+    display: flex;
+    border-top: 1px solid #333;
+}
+
+.chat-input-area input {
+    flex: 1;
+    background: #111;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    outline: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Hide menu on mobile for now */
+    .hero h1 { font-size: 2.2rem; }
+    .hero-buttons { display: flex; flex-direction: column; gap: 10px; }
+    .btn-secondary { margin-left: 0; }
+    .chat-overlay { width: 90%; right: 5%; }
 }
