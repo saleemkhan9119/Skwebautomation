@@ -1,97 +1,84 @@
-document.addEventListener('DOMContentLoaded', function() {
-    
-    // --- ELEMENTS KO SELECT KARNA ---
+document.addEventListener('DOMContentLoaded', () => {
     const activateBtn = document.getElementById('activate-btn');
     const chatInterface = document.getElementById('chat-interface');
-    const closeChatBtn = document.getElementById('close-chat');
+    const closeChat = document.getElementById('close-chat');
     const sendBtn = document.getElementById('send-btn');
     const userInput = document.getElementById('user-input');
-    const chatHistory = document.getElementById('chat-history');
+    const chatBody = document.getElementById('chat-history');
 
-    // --- 1. CHAT OPEN KARNE KA LOGIC ---
-    if (activateBtn) {
-        activateBtn.addEventListener('click', function() {
-            chatInterface.classList.remove('hidden'); // Hidden class hatayega
-            addMessage("System", "Welcome back! Saim and Sofia are online. How can we help?");
-        });
-    }
-
-    // --- 2. CHAT CLOSE KARNE KA LOGIC ---
-    if (closeChatBtn) {
-        closeChatBtn.addEventListener('click', function() {
-            chatInterface.classList.add('hidden'); // Wapas chupa dega
-        });
-    }
-
-    // --- 3. MESSAGE BHEJNE KA LOGIC ---
-    if (sendBtn) {
-        sendBtn.addEventListener('click', function() {
-            sendMessage();
-        });
-    }
-
-    // Enter button dabane par bhi message jaye
-    userInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            sendMessage();
+    // Chat Toggle
+    if(activateBtn) activateBtn.addEventListener('click', () => {
+        chatInterface.classList.remove('hidden');
+        if(chatBody.children.length === 0) {
+            botType("Hello! I am Sofia, your Master AI. I can control your entire workflow. How can I help today?");
         }
     });
 
-    // --- MAIN FUNCTION: MESSAGE HANDLE KARNA ---
-    function sendMessage() {
+    if(closeChat) closeChat.addEventListener('click', () => chatInterface.classList.add('hidden'));
+
+    // Send Message
+    sendBtn.addEventListener('click', handleSend);
+    userInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') handleSend(); });
+
+    // Global function for Quick Chips
+    window.quickReply = (text) => {
+        userInput.value = text;
+        handleSend();
+    };
+
+    function handleSend() {
         const text = userInput.value.trim();
-        if (text === "") return; // Agar khali hai to kuch mat karo
+        if(!text) return;
 
-        // 1. User ka message add karo
-        addMessage("You", text);
-        userInput.value = ""; // Input saaf karo
+        addMessage(text, 'user-msg');
+        userInput.value = '';
 
-        // 2. Thoda wait karke AI ka jawab (Simulation)
-        const loadingDiv = document.createElement('div');
-        loadingDiv.textContent = "AI is thinking...";
-        loadingDiv.style.fontSize = "0.8rem";
-        loadingDiv.style.color = "#888";
-        loadingDiv.style.padding = "5px 10px";
-        chatHistory.appendChild(loadingDiv);
-        chatHistory.scrollTop = chatHistory.scrollHeight;
-
+        // FAST RESPONSE: Only 600ms delay (Speed increased)
         setTimeout(() => {
-            chatHistory.removeChild(loadingDiv); // Loading hatao
-            
-            // Simple Logic: Agar "hello" bole to Sofia, technical ho to Saim
-            let aiResponse = "";
-            if (text.toLowerCase().includes("hello") || text.toLowerCase().includes("hi")) {
-                aiResponse = "👋 Hi there! I am Sofia. Ready to assist you!";
-            } else if (text.toLowerCase().includes("price") || text.toLowerCase().includes("cost")) {
-                aiResponse = "💰 Our pricing starts at ₹499/month. Check the Pricing section!";
-            } else {
-                aiResponse = "🤖 (Saim): I have analyzed your request. Processing data...";
-            }
-            
-            addMessage("AI", aiResponse);
-        }, 1500); // 1.5 second ka delay real lagne ke liye
+            const response = generateResponse(text);
+            botType(response);
+        }, 600); 
     }
 
-    // --- HELPER: SCREEN PAR MESSAGE DIKHANA ---
-    function addMessage(sender, text) {
-        const msgDiv = document.createElement('div');
-        msgDiv.style.marginBottom = "10px";
-        msgDiv.style.padding = "8px";
-        msgDiv.style.borderRadius = "5px";
+    function addMessage(text, className) {
+        const div = document.createElement('div');
+        div.classList.add('msg', className);
+        div.textContent = text;
+        chatBody.appendChild(div);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    // Typing Effect Function (Cool Look)
+    function botType(text) {
+        const div = document.createElement('div');
+        div.classList.add('msg', 'bot-msg');
+        chatBody.appendChild(div);
         
-        if (sender === "You") {
-            msgDiv.style.background = "#333";
-            msgDiv.style.textAlign = "right";
-            msgDiv.innerHTML = `<strong>You:</strong> ${text}`;
-        } else {
-            msgDiv.style.background = "#1a1a1a";
-            msgDiv.style.border = "1px solid #333";
-            msgDiv.style.color = "#e0cea4"; // Gold color for AI
-            msgDiv.innerHTML = `<strong>${sender}:</strong> ${text}`;
-        }
+        let i = 0;
+        const interval = setInterval(() => {
+            div.textContent += text.charAt(i);
+            i++;
+            chatBody.scrollTop = chatBody.scrollHeight;
+            if(i > text.length - 1) clearInterval(interval);
+        }, 20); // Typing speed
+    }
+
+    // Sofia's Brain
+    function generateResponse(input) {
+        input = input.toLowerCase();
         
-        chatHistory.appendChild(msgDiv);
-        // Auto scroll to bottom
-        chatHistory.scrollTop = chatHistory.scrollHeight;
+        if(input.includes("price") || input.includes("cost")) 
+            return "Our Master Suite starts at ₹1499/mo. It includes unlimited automation and sub-agents.";
+        
+        if(input.includes("hello") || input.includes("hi")) 
+            return "Hey there! Ready to automate your business?";
+            
+        if(input.includes("status")) 
+            return "System Status: 🟢 All Systems Operational. 0% Latency.";
+
+        if(input.includes("feature") || input.includes("do"))
+            return "I can handle CRM updates, send WhatsApp replies, manage bookings, and even analyze your sales data instantly.";
+
+        return "I am Sofia, the Master AI. I am analyzing that request... (Simulating detailed analysis).";
     }
 });
