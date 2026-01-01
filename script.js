@@ -1,84 +1,90 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const activateBtn = document.getElementById('activate-btn');
-    const chatInterface = document.getElementById('chat-interface');
-    const closeChat = document.getElementById('close-chat');
-    const sendBtn = document.getElementById('send-btn');
-    const userInput = document.getElementById('user-input');
-    const chatBody = document.getElementById('chat-history');
+// ✅ आपका n8n Webhook URL
+const WEBHOOK_URL = "https://sallu1196.app.n8n.cloud/webhook/sofia-chat";
 
-    // Chat Toggle
-    if(activateBtn) activateBtn.addEventListener('click', () => {
-        chatInterface.classList.remove('hidden');
-        if(chatBody.children.length === 0) {
-            botType("Hello! I am Sofia, your Master AI. I can control your entire workflow. How can I help today?");
-        }
-    });
-
-    if(closeChat) closeChat.addEventListener('click', () => chatInterface.classList.add('hidden'));
-
-    // Send Message
-    sendBtn.addEventListener('click', handleSend);
-    userInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') handleSend(); });
-
-    // Global function for Quick Chips
-    window.quickReply = (text) => {
-        userInput.value = text;
-        handleSend();
-    };
-
-    function handleSend() {
-        const text = userInput.value.trim();
-        if(!text) return;
-
-        addMessage(text, 'user-msg');
-        userInput.value = '';
-
-        // FAST RESPONSE: Only 600ms delay (Speed increased)
-        setTimeout(() => {
-            const response = generateResponse(text);
-            botType(response);
-        }, 600); 
+// चैट विंडो को खोलने/बंद करने के लिए
+function toggleChat() {
+    const window = document.getElementById('chat-window');
+    const btn = document.getElementById('chat-widget-btn');
+    
+    if (window.style.display === 'flex') {
+        window.style.display = 'none';
+        btn.style.transform = 'scale(1)';
+    } else {
+        window.style.display = 'flex';
+        btn.style.transform = 'scale(0)';
+        setTimeout(() => document.getElementById('user-input').focus(), 100);
     }
+}
 
-    function addMessage(text, className) {
-        const div = document.createElement('div');
-        div.classList.add('msg', className);
-        div.textContent = text;
-        chatBody.appendChild(div);
-        chatBody.scrollTop = chatBody.scrollHeight;
-    }
+// Enter बटन दबाने पर मैसेज भेजने के लिए
+function handleEnter(e) {
+    if (e.key === 'Enter') sendMessage();
+}
 
-    // Typing Effect Function (Cool Look)
-    function botType(text) {
-        const div = document.createElement('div');
-        div.classList.add('msg', 'bot-msg');
-        chatBody.appendChild(div);
+// मैसेज भेजने का असली फंक्शन
+async function sendMessage() {
+    const inputField = document.getElementById('user-input');
+    const message = inputField.value.trim();
+    if (!message) return;
+
+    // 1. यूजर का मैसेज दिखाएं
+    appendMessage(message, 'user');
+    inputField.value = '';
+
+    // 2. 'Typing...' दिखाएं
+    const typingId = appendMessage('Typing...', 'ai-temp');
+
+    try {
+        // 3. n8n को डेटा भेजें
+        const response = await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: message }) 
+        });
+
+        const data = await response.json();
+
+        // 4. टाइपिंग हटाएं और जवाब दिखाएं
+        removeMessage(typingId);
         
-        let i = 0;
-        const interval = setInterval(() => {
-            div.textContent += text.charAt(i);
-            i++;
-            chatBody.scrollTop = chatBody.scrollHeight;
-            if(i > text.length - 1) clearInterval(interval);
-        }, 20); // Typing speed
+        // जवाब को पकड़ना (reply या output दोनों के लिए)
+        const replyText = data.reply || data.output || "I apologize, I am momentarily unavailable.";
+        appendMessage(replyText, 'ai');
+
+    } catch (error) {
+        removeMessage(typingId);
+        appendMessage("⚠️ Connection issue. Please try again.", 'ai');
+        console.error(error);
+    }
+}
+
+// चैट बॉक्स में मैसेज जोड़ने के लिए
+function appendMessage(text, sender) {
+    const msgDiv = document.createElement('div');
+    const id = Date.now();
+    msgDiv.id = id;
+    
+    if (sender === 'user') {
+        msgDiv.className = 'msg msg-user';
+        msgDiv.innerText = text;
+    } else if (sender === 'ai-temp') {
+        msgDiv.className = 'msg msg-ai';
+        msgDiv.style.fontStyle = 'italic';
+        msgDiv.style.color = '#888';
+        msgDiv.innerText = 'Sofia is thinking...';
+    } else {
+        msgDiv.className = 'msg msg-ai';
+        msgDiv.innerText = text;
     }
 
-    // Sofia's Brain
-    function generateResponse(input) {
-        input = input.toLowerCase();
-        
-        if(input.includes("price") || input.includes("cost")) 
-            return "Our Master Suite starts at ₹1499/mo. It includes unlimited automation and sub-agents.";
-        
-        if(input.includes("hello") || input.includes("hi")) 
-            return "Hey there! Ready to automate your business?";
-            
-        if(input.includes("status")) 
-            return "System Status: 🟢 All Systems Operational. 0% Latency.";
+    const container = document.getElementById('messages');
+    container.appendChild(msgDiv);
+    container.scrollTop = container.scrollHeight;
+    return id;
+}
 
-        if(input.includes("feature") || input.includes("do"))
-            return "I can handle CRM updates, send WhatsApp replies, manage bookings, and even analyze your sales data instantly.";
-
-        return "I am Sofia, the Master AI. I am analyzing that request... (Simulating detailed analysis).";
-    }
-});
+// टाइपिंग वाला मैसेज हटाने के लिए
+function removeMessage(id) {
+    const element = document.getElementById(id);
+    if (element) element.remove();
+}
