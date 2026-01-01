@@ -3,160 +3,497 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK Master AI | The Central Brain</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <title>SK Web Automation | The Luxury of Time</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           1. LUXURY THEME VARIABLES
+           ========================================= */
+        :root {
+            --primary: #0B1120;     /* Deepest Navy (Royal) */
+            --secondary: #1E293B;   /* Dark Slate */
+            --accent: #D4AF37;      /* Metallic Gold */
+            --accent-hover: #F6E05E; /* Bright Gold */
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --glass: rgba(11, 17, 32, 0.85);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-light);
+        }
+
+        .gold-text { color: var(--accent); }
+        
+        /* =========================================
+           2. HEADER & NAVIGATION
+           ========================================= */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--accent);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        .btn-gold {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 10px 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            background: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* =========================================
+           3. HERO SECTION (The Grand Lobby)
+           ========================================= */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(11, 17, 32, 0.7), rgba(11, 17, 32, 0.7)), url('https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-subtitle {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* =========================================
+           4. SERVICES (The Amenities)
+           ========================================= */
+        .section { padding: 100px 0; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--secondary);
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s, border-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           5. AI CHAT WIDGET (Luxury Concierge)
+           ========================================= */
+        #chat-widget-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+            z-index: 9999;
+            transition: transform 0.3s;
+            border: none;
+        }
+
+        #chat-widget-btn:hover { transform: scale(1.1); }
+        #chat-widget-btn i { font-size: 28px; color: var(--primary); }
+
+        #chat-window {
+            display: none;
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            width: 360px;
+            height: 500px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            z-index: 9999;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .chat-header {
+            background: var(--primary);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .chat-info h4 { color: var(--accent); font-size: 16px; margin: 0; }
+        .chat-info span { color: #fff; font-size: 12px; opacity: 0.7; }
+
+        #messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #F8F9FA;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .msg {
+            max-width: 80%;
+            padding: 12px 16px;
+            font-size: 14px;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .msg-user {
+            align-self: flex-end;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px 12px 0 12px;
+        }
+
+        .msg-ai {
+            align-self: flex-start;
+            background: white;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 12px 12px 12px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .chat-input-area {
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            font-family: inherit;
+        }
+
+        #send-btn {
+            background: var(--primary);
+            color: var(--accent);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        #send-btn:hover { background: var(--secondary); }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            #chat-window { width: 90%; right: 5%; bottom: 100px; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="glass-nav">
-        <div class="logo">SK Automation <span class="badge">PRO</span></div>
-        <button id="activate-btn" class="btn-glow">Launch Sofia <i class="fa-solid fa-sparkles"></i></button>
-    </nav>
-
-    <header class="hero-section">
-        <div class="glow-effect"></div>
-        <div class="hero-content">
-            <span class="pill">MASTER AGENT ACTIVE</span>
-            <h1>One Brain. <br>Infinite Possibilities.</h1>
-            <p>Meet <strong>Sofia</strong>, your Master AI Agent. She doesn't just chat; she orchestrates your entire business automation, manages sub-agents, and executes complex workflows instantly.</p>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">SK<span class="gold-text">Web</span></a>
+            <nav>
+                <button class="btn-gold">Book Consultation</button>
+            </nav>
         </div>
     </header>
 
-    <section class="master-features">
-        <h2>Master Agent Capabilities</h2>
-        <div class="grid">
-            <div class="feature-card">
-                <i class="fa-solid fa-network-wired"></i>
-                <h3>Central Orchestration</h3>
-                <p>Sofia controls all other sub-agents (Sales, Support, HR) from a single command center.</p>
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="hero-subtitle">Welcome to Future</span>
+            <h1>The Luxury of <br><span class="gold-text">Automation</span></h1>
+            <p>We don't just write code. We craft premium digital experiences and AI agents that give you back your most valuable asset: Time.</p>
+            <button class="btn-gold" onclick="toggleChat()">Talk to Sofia (AI)</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="hero-subtitle">Our Expertise</span>
+                <h2>Premium Services</h2>
             </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-bolt"></i>
-                <h3>Instant Execution</h3>
-                <p>Real-time task processing with 0.1s latency. No waiting.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-database"></i>
-                <h3>Deep Context Memory</h3>
-                <p>Remembers every interaction, client detail, and preference forever.</p>
-            </div>
-            <div class="feature-card">
-                <i class="fa-solid fa-robot"></i>
-                <h3>Self-Correction</h3>
-                <p>Automatically detects errors in workflows and fixes them without human help.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-robot service-icon"></i>
+                    <h3>AI Concierge Agents</h3>
+                    <p>Intelligent digital employees like Sofia that handle your customers with the grace of a 5-star receptionist.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-network-wired service-icon"></i>
+                    <h3>Workflow Automation</h3>
+                    <p>Seamless integration of your business apps. Let the system do the heavy lifting while you focus on growth.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-globe service-icon"></i>
+                    <h3>Luxury Web Design</h3>
+                    <p>Websites that don't just inform, but captivate. Aesthetic precision meets technical excellence.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <div id="chat-interface" class="chat-container hidden">
-        <div class="chat-header">
-            <div class="agent-info">
-                <div class="avatar">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="Sofia">
-                    <div class="status-dot"></div>
-                </div>
-                <div>
-                    <h4>Sofia (Master AI)</h4>
-                    <span class="status-text">Online & Ready</span>
-                </div>
-            </div>
-            <button id="close-chat"><i class="fa-solid fa-minus"></i></button>
-        </div>
-        
-        <div id="chat-history" class="chat-body">
-            </div>
+    <button id="chat-widget-btn" onclick="toggleChat()">
+        <i class="fas fa-comment-dots"></i>
+    </button>
 
-        <div class="chat-footer">
-            <div class="quick-actions">
-                <button onclick="quickReply('Check System Status')">System Status</button>
-                <button onclick="quickReply('Show Pricing')">Pricing</button>
+    <div id="chat-window">
+        <div class="chat-header">
+            <div class="chat-avatar">S</div>
+            <div class="chat-info">
+                <h4>Sofia (AI)</h4>
+                <span>SK Automation Concierge</span>
             </div>
-            <div class="input-group">
-                <input type="text" id="user-input" placeholder="Ask Sofia anything...">
-                <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            <div style="margin-left: auto; cursor: pointer; color: var(--accent);" onclick="toggleChat()">✖</div>
+        </div>
+        <div id="messages">
+            <div class="msg msg-ai">
+                नमस्ते! Welcome to SK Web Automation. I am Sofia. How may I assist you in elevating your business today?
             </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="user-input" placeholder="Ask me anything..." onkeypress="handleEnter(event)">
+            <button id="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
 
-    <script src="script.js"></script>
-<div id="chat-widget" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
-  <button onclick="toggleChat()" style="background: #25D366; color: white; border: none; padding: 15px; border-radius: 50%; font-size: 24px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">💬</button>
-</div>
+    <script>
+        // ✅ YOUR N8N WEBHOOK URL
+        const WEBHOOK_URL = "https://sallu1196.app.n8n.cloud/webhook/sofia-chat";
 
-<div id="chat-box" style="display: none; position: fixed; bottom: 80px; right: 20px; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); flex-direction: column; overflow: hidden; z-index: 9999;">
-  <div style="background: #075e54; color: white; padding: 10px; font-weight: bold;">Lotus AI Assistant</div>
-  <div id="messages" style="flex: 1; padding: 10px; overflow-y: auto; background: #f0f0f0; display: flex; flex-direction: column; gap: 8px;"></div>
-  <div style="display: flex; padding: 5px; border-top: 1px solid #ddd;">
-    <input type="text" id="userInput" placeholder="Ask about Hotel Lotus..." style="flex: 1; padding: 8px; border: none; outline: none;">
-    <button onclick="sendMessage()" style="background: #128c7e; color: white; border: none; padding: 8px 15px; cursor: pointer;">➤</button>
-  </div>
-</div>
+        function toggleChat() {
+            const window = document.getElementById('chat-window');
+            const btn = document.getElementById('chat-widget-btn');
+            
+            if (window.style.display === 'flex') {
+                window.style.display = 'none';
+                btn.style.transform = 'scale(1)';
+            } else {
+                window.style.display = 'flex';
+                btn.style.transform = 'scale(0)';
+                setTimeout(() => document.getElementById('user-input').focus(), 100);
+            }
+        }
 
-<script>
-  // अपना Webhook URL यहाँ डालें 👇
-  const WEBHOOK_URL = "https://sallu1196.app.n8n.cloud/webhook/sofia-chat"
+        function handleEnter(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
 
-  function toggleChat() {
-    const box = document.getElementById('chat-box');
-    box.style.display = box.style.display === 'none' ? 'flex' : 'none';
-  }
+        async function sendMessage() {
+            const inputField = document.getElementById('user-input');
+            const message = inputField.value.trim();
+            if (!message) return;
 
-  async function sendMessage() {
-    const input = document.getElementById('userInput');
-    const text = input.value;
-    if (!text) return;
+            // 1. Show User Message
+            appendMessage(message, 'user');
+            inputField.value = '';
 
-    addMessage(text, 'user');
-    input.value = '';
-    
-    // AI को भेज रहे हैं...
-    addMessage("Typing...", 'ai-temp');
+            // 2. Show Typing Indicator
+            const typingId = appendMessage('Typing...', 'ai-temp');
 
-    try {
-      const response = await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text }) // हम message भेज रहे हैं
-      });
-      const data = await response.json();
-      
-      removeTemp();
-      addMessage(data.reply, 'ai'); // जवाब आ गया!
-      
-    } catch (error) {
-      removeTemp();
-      addMessage("Error: Could not connect to AI", 'ai');
-    }
-  }
+            try {
+                // 3. Send to n8n
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: message }) 
+                });
 
-  function addMessage(text, sender) {
-    const div = document.createElement('div');
-    div.style.padding = "8px 12px";
-    div.style.borderRadius = "8px";
-    div.style.maxWidth = "80%";
-    div.style.fontSize = "14px";
-    
-    if (sender === 'user') {
-      div.style.alignSelf = "flex-end";
-      div.style.background = "#dcf8c6";
-    } else {
-      div.style.alignSelf = "flex-start";
-      div.style.background = "white";
-    }
-    
-    div.innerText = text;
-    if(sender === 'ai-temp') div.id = "temp-msg";
-    document.getElementById('messages').appendChild(div);
-    document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
-  }
+                const data = await response.json();
 
-  function removeTemp() {
-    const temp = document.getElementById('temp-msg');
-    if(temp) temp.remove();
-  }
-</script>
-    
+                // 4. Remove Typing & Show Reply
+                removeMessage(typingId);
+                
+                // Handling both 'reply' and 'output' formats
+                const replyText = data.reply || data.output || "I apologize, I am momentarily unavailable.";
+                appendMessage(replyText, 'ai');
+
+            } catch (error) {
+                removeMessage(typingId);
+                appendMessage("⚠️ Connection issue. Please try again.", 'ai');
+                console.error(error);
+            }
+        }
+
+        function appendMessage(text, sender) {
+            const msgDiv = document.createElement('div');
+            const id = Date.now();
+            msgDiv.id = id;
+            
+            // Classes based on sender
+            if (sender === 'user') {
+                msgDiv.className = 'msg msg-user';
+                msgDiv.innerText = text;
+            } else if (sender === 'ai-temp') {
+                msgDiv.className = 'msg msg-ai';
+                msgDiv.style.fontStyle = 'italic';
+                msgDiv.style.color = '#888';
+                msgDiv.innerText = 'Sofia is thinking...';
+            } else {
+                msgDiv.className = 'msg msg-ai';
+                msgDiv.innerText = text;
+            }
+
+            const container = document.getElementById('messages');
+            container.appendChild(msgDiv);
+            container.scrollTop = container.scrollHeight;
+            return id;
+        }
+
+        function removeMessage(id) {
+            const element = document.getElementById(id);
+            if (element) element.remove();
+        }
+    </script>
 </body>
 </html>
