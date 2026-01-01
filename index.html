@@ -5,337 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SK Web Automation | The Luxury of Time</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <style>
-        /* =========================================
-           1. LUXURY THEME VARIABLES
-           ========================================= */
-        :root {
-            --primary: #0B1120;     /* Deepest Navy (Royal) */
-            --secondary: #1E293B;   /* Dark Slate */
-            --accent: #D4AF37;      /* Metallic Gold */
-            --accent-hover: #F6E05E; /* Bright Gold */
-            --text-light: #F8FAFC;
-            --text-muted: #94A3B8;
-            --glass: rgba(11, 17, 32, 0.85);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--primary);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            color: var(--text-light);
-        }
-
-        .gold-text { color: var(--accent); }
-        
-        /* =========================================
-           2. HEADER & NAVIGATION
-           ========================================= */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding: 20px 0;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--accent);
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        nav ul {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover { color: var(--accent); }
-
-        .btn-gold {
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            padding: 10px 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 13px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-gold:hover {
-            background: var(--accent);
-            color: var(--primary);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-        }
-
-        /* =========================================
-           3. HERO SECTION (The Grand Lobby)
-           ========================================= */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(11, 17, 32, 0.7), rgba(11, 17, 32, 0.7)), url('https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-subtitle {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-size: 14px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        /* =========================================
-           4. SERVICES (The Amenities)
-           ========================================= */
-        .section { padding: 100px 0; }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-header h2 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .service-card {
-            background: var(--secondary);
-            padding: 40px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.3s, border-color 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-        }
-
-        .service-icon {
-            font-size: 40px;
-            color: var(--accent);
-            margin-bottom: 25px;
-        }
-
-        .service-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* =========================================
-           5. AI CHAT WIDGET (Luxury Concierge)
-           ========================================= */
-        #chat-widget-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 65px;
-            height: 65px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
-            z-index: 9999;
-            transition: transform 0.3s;
-            border: none;
-        }
-
-        #chat-widget-btn:hover { transform: scale(1.1); }
-        #chat-widget-btn i { font-size: 28px; color: var(--primary); }
-
-        #chat-window {
-            display: none;
-            position: fixed;
-            bottom: 110px;
-            right: 30px;
-            width: 360px;
-            height: 500px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            z-index: 9999;
-            flex-direction: column;
-            overflow: hidden;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .chat-header {
-            background: var(--primary);
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            border-bottom: 3px solid var(--accent);
-        }
-
-        .chat-avatar {
-            width: 40px;
-            height: 40px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: var(--primary);
-        }
-
-        .chat-info h4 { color: var(--accent); font-size: 16px; margin: 0; }
-        .chat-info span { color: #fff; font-size: 12px; opacity: 0.7; }
-
-        #messages {
-            flex: 1;
-            padding: 20px;
-            overflow-y: auto;
-            background: #F8F9FA;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .msg {
-            max-width: 80%;
-            padding: 12px 16px;
-            font-size: 14px;
-            line-height: 1.5;
-            position: relative;
-        }
-
-        .msg-user {
-            align-self: flex-end;
-            background: var(--primary);
-            color: white;
-            border-radius: 12px 12px 0 12px;
-        }
-
-        .msg-ai {
-            align-self: flex-start;
-            background: white;
-            color: #333;
-            border: 1px solid #ddd;
-            border-radius: 12px 12px 12px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .chat-input-area {
-            padding: 15px;
-            background: white;
-            border-top: 1px solid #eee;
-            display: flex;
-            gap: 10px;
-        }
-
-        #user-input {
-            flex: 1;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 25px;
-            outline: none;
-            font-family: inherit;
-        }
-
-        #send-btn {
-            background: var(--primary);
-            color: var(--accent);
-            border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        #send-btn:hover { background: var(--secondary); }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            #chat-window { width: 90%; right: 5%; bottom: 100px; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -343,21 +17,54 @@
         <div class="container">
             <a href="#" class="logo">SK<span class="gold-text">Web</span></a>
             <nav>
-                <button class="btn-gold">Book Consultation</button>
+                <ul class="nav-links">
+                    <li><a href="#about">Philosophy</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Process</a></li>
+                </ul>
+                <button class="btn-gold" onclick="toggleChat()">Book Consultation</button>
             </nav>
         </div>
     </header>
 
     <section class="hero">
+        <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <span class="hero-subtitle">Welcome to Future</span>
-            <h1>The Luxury of <br><span class="gold-text">Automation</span></h1>
-            <p>We don't just write code. We craft premium digital experiences and AI agents that give you back your most valuable asset: Time.</p>
-            <button class="btn-gold" onclick="toggleChat()">Talk to Sofia (AI)</button>
+            <span class="hero-subtitle">Welcome to the Future</span>
+            <h1>The Luxury of <br><span class="gold-text">True Automation</span></h1>
+            <p>We craft premium digital experiences and AI agents like Sofia that give you back your most valuable asset: Time. Experience business at a higher level.</p>
+            <div class="hero-btns">
+                <button class="btn-gold" onclick="toggleChat()">Talk to Sofia (AI)</button>
+                <button class="btn-outline" href="#services">Explore Services</button>
+            </div>
         </div>
     </section>
 
-    <section class="section">
+    <section id="about" class="section bg-light">
+        <div class="container split-layout">
+            <div class="split-text">
+                <span class="hero-subtitle">Our Philosophy</span>
+                <h2>We Don't Just Write Code.<br>We Architect <span class="gold-text">Freedom.</span></h2>
+                <p>In a chaotic digital world, silence and efficiency are the ultimate luxuries. At SK Web Automation, we function like a 5-star concierge for your business.</p>
+                <p>We replace repetitive chaos with elegant, invisible workflows. Whether it's a website that stuns or an AI that sells, everything we build is designed to give you peace of mind.</p>
+                <div class="stats-row">
+                    <div class="stat">
+                        <h3 class="gold-text">500+</h3>
+                        <span>Projects</span>
+                    </div>
+                    <div class="stat">
+                        <h3 class="gold-text">10k+</h3>
+                        <span>Hours Saved</span>
+                    </div>
+                </div>
+            </div>
+            <div class="split-image">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Office">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section bg-dark">
         <div class="container">
             <div class="section-header">
                 <span class="hero-subtitle">Our Expertise</span>
@@ -367,21 +74,82 @@
                 <div class="service-card">
                     <i class="fas fa-robot service-icon"></i>
                     <h3>AI Concierge Agents</h3>
-                    <p>Intelligent digital employees like Sofia that handle your customers with the grace of a 5-star receptionist.</p>
+                    <p>Intelligent digital employees like Sofia that handle your customers with the grace of a 5-star receptionist, 24/7.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-network-wired service-icon"></i>
                     <h3>Workflow Automation</h3>
-                    <p>Seamless integration of your business apps. Let the system do the heavy lifting while you focus on growth.</p>
+                    <p>Seamless integration of your business apps (n8n, Zapier). Let the system do the heavy lifting while you focus on growth.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-globe service-icon"></i>
+                    <i class="fas fa-gem service-icon"></i>
                     <h3>Luxury Web Design</h3>
                     <p>Websites that don't just inform, but captivate. Aesthetic precision meets technical excellence.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-chart-line service-icon"></i>
+                    <h3>Business Intelligence</h3>
+                    <p>Turn raw data into gold. We build dashboards that give you a bird's eye view of your empire.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="process" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="hero-subtitle">The Journey</span>
+                <h2 style="color: var(--primary);">How We Work</h2>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Consultation</h3>
+                    <p>We sit down to understand your vision and bottlenecks.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>The Blueprint</h3>
+                    <p>We design a custom automation architecture for you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Execution</h3>
+                    <p>We build, test, and deploy while you relax.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <a href="#" class="logo">SK<span class="gold-text">Web</span></a>
+                <p>Redefining business efficiency through the power of AI and Design.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#" onclick="toggleChat()">Contact AI</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>concierge@skwebautomation.online</p>
+                <p>+91 98765 43210</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 SK Web Automation. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <button id="chat-widget-btn" onclick="toggleChat()">
         <i class="fas fa-comment-dots"></i>
@@ -407,93 +175,6 @@
         </div>
     </div>
 
-    <script>
-        // ✅ YOUR N8N WEBHOOK URL
-        const WEBHOOK_URL = "https://sallu1196.app.n8n.cloud/webhook/sofia-chat";
-
-        function toggleChat() {
-            const window = document.getElementById('chat-window');
-            const btn = document.getElementById('chat-widget-btn');
-            
-            if (window.style.display === 'flex') {
-                window.style.display = 'none';
-                btn.style.transform = 'scale(1)';
-            } else {
-                window.style.display = 'flex';
-                btn.style.transform = 'scale(0)';
-                setTimeout(() => document.getElementById('user-input').focus(), 100);
-            }
-        }
-
-        function handleEnter(e) {
-            if (e.key === 'Enter') sendMessage();
-        }
-
-        async function sendMessage() {
-            const inputField = document.getElementById('user-input');
-            const message = inputField.value.trim();
-            if (!message) return;
-
-            // 1. Show User Message
-            appendMessage(message, 'user');
-            inputField.value = '';
-
-            // 2. Show Typing Indicator
-            const typingId = appendMessage('Typing...', 'ai-temp');
-
-            try {
-                // 3. Send to n8n
-                const response = await fetch(WEBHOOK_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: message }) 
-                });
-
-                const data = await response.json();
-
-                // 4. Remove Typing & Show Reply
-                removeMessage(typingId);
-                
-                // Handling both 'reply' and 'output' formats
-                const replyText = data.reply || data.output || "I apologize, I am momentarily unavailable.";
-                appendMessage(replyText, 'ai');
-
-            } catch (error) {
-                removeMessage(typingId);
-                appendMessage("⚠️ Connection issue. Please try again.", 'ai');
-                console.error(error);
-            }
-        }
-
-        function appendMessage(text, sender) {
-            const msgDiv = document.createElement('div');
-            const id = Date.now();
-            msgDiv.id = id;
-            
-            // Classes based on sender
-            if (sender === 'user') {
-                msgDiv.className = 'msg msg-user';
-                msgDiv.innerText = text;
-            } else if (sender === 'ai-temp') {
-                msgDiv.className = 'msg msg-ai';
-                msgDiv.style.fontStyle = 'italic';
-                msgDiv.style.color = '#888';
-                msgDiv.innerText = 'Sofia is thinking...';
-            } else {
-                msgDiv.className = 'msg msg-ai';
-                msgDiv.innerText = text;
-            }
-
-            const container = document.getElementById('messages');
-            container.appendChild(msgDiv);
-            container.scrollTop = container.scrollHeight;
-            return id;
-        }
-
-        function removeMessage(id) {
-            const element = document.getElementById(id);
-            if (element) element.remove();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
