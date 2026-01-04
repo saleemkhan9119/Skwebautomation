@@ -3,142 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK Web Automation | The Future is Here</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>SKWEB.AI | Next-Gen AI Automation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <div class="neural-bg"></div>
     <div class="grid-overlay"></div>
 
     <nav class="navbar">
-        <div class="logo">SK<span class="highlight-blue">WEB</span><span class="highlight-gold">.AI</span></div>
-        <a href="https://wa.me/917665676753" class="btn-neon">Book Consultation <i class="fas fa-arrow-right"></i></a>
+        <div class="logo">SKWEB<span>.AI</span></div>
+        <div class="nav-links">
+            <a href="https://wa.me/917665676753" class="btn-neon">Book Consultation</a>
+        </div>
     </nav>
 
     <header class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <p class="subtitle glow-text">Welcome to 2050</p>
-                <h1>Automate Reality. <br>Dominate The <span class="highlight-blue text-glitch">Future.</span></h1>
-                <p class="description">
-                    We build autonomous AI agents like <strong>Sofia</strong> and construct digital empires. Stop working in the past. Experience the power of true automation.
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn-neon-blue" onclick="toggleChat()">Talk to Sofia (AI) <i class="fas fa-robot"></i></button>
-                    <a href="#services" class="btn-transparent">Explore Systems</a>
+        <div class="container hero-wrapper">
+            <div class="hero-text">
+                <span class="badge">SYSTEM READY: V2.0</span>
+                <h1>Architecting <br><span class="gradient-text">Digital Freedom</span></h1>
+                <p>We build autonomous AI agents like <strong>Sofia</strong> to replace repetitive chaos with elegant, 3D-integrated workflows.</p>
+                <div class="hero-actions">
+                    <button class="btn-main" onclick="openAIChat()">Talk to Sofia 🤖</button>
+                    <a href="mailto:skwebautomation@gmail.com" class="btn-outline">Send Signal</a>
                 </div>
             </div>
-            
-            <div class="hero-3d-image-wrapper">
-                <div class="glow-circle"></div>
-                <img src="https://cdn.pixabay.com/photo/2023/05/30/14/26/ai-8028686_1280.jpg" alt="AI Brain 3D" class="hero-3d-image floating-animate">
+            <div class="hero-visual">
+                <div class="floating-container">
+                    <img src="https://images.unsplash.com/photo-1675557009475-43a05508110b?q=80&w=1000&auto=format&fit=crop" alt="AI Core" class="ai-core">
+                    <div class="core-glow"></div>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="section philosophy">
-        <div class="container philosophy-container">
-            <div class="text-side">
-                 <p class="section-label glow-text">Our Core Directive</p>
-                <h2>We Architect <span class="highlight-gold">Digital Freedom.</span></h2>
-                <p class="text-block">
-                    In a chaotic digital world, efficiency is the ultimate weapon. We function like high-tech architects, replacing repetitive chaos with elegant, invisible, autonomous workflows.
-                </p>
-                <div class="stats-grid">
-                    <div class="stat-item"><h3 class="counter">500+</h3><p>Systems Deployed</p></div>
-                    <div class="stat-item"><h3>10k+</h3><p>Hours Reclaimed</p></div>
-                </div>
-            </div>
-            <div class="image-side-3d">
-                 <img src="https://cdn.pixabay.com/photo/2020/12/13/22/14/robot-5829557_1280.jpg" alt="Future Tech" class="tilt-image">
-            </div>
-        </div>
-    </section>
-
-    <section class="section services" id="services">
+    <section class="services" id="systems">
         <div class="container">
-            <p class="section-label glow-text center-text">System Capabilities</p>
-            <h2 class="center-text">Premium Services</h2>
-            <div class="services-grid">
-                <div class="service-card tilt-card">
-                    <div class="card-content">
-                        <i class="fas fa-brain icon-glow-blue"></i>
-                        <h3>AI Concierge Agents</h3>
-                        <p>Intelligent digital lifeforms like Sofia. They handle clients 24/7 with inhuman precision and grace.</p>
-                    </div>
+            <h2 class="section-title">Cybernetic Systems</h2>
+            <div class="service-grid">
+                <div class="glass-card" data-tilt>
+                    <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>AI Concierge</h3>
+                    <p>Sofia handles your clients with 24/7 autonomous precision.</p>
                 </div>
-                <div class="service-card tilt-card">
-                    <div class="card-content">
-                        <i class="fas fa-network-wired icon-glow-gold"></i>
-                        <h3>Workflow Automation</h3>
-                        <p>Seamless neural integration of apps (n8n, Zapier). Let the machine do the heavy lifting.</p>
-                    </div>
+                <div class="glass-card" data-tilt>
+                    <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Workflow Neural</h3>
+                    <p>Integrating n8n & Zapier for invisible business efficiency.</p>
                 </div>
-                <div class="service-card tilt-card">
-                    <div class="card-content">
-                        <i class="fas fa-cube icon-glow-blue"></i>
-                        <h3>Cybernetic Web Design</h3>
-                        <p>Websites that feel alive. Aesthetic precision meets technical dominance. 3D interfaces.</p>
-                    </div>
+                <div class="glass-card" data-tilt>
+                    <div class="card-icon"><i class="fas fa-vr-cardboard"></i></div>
+                    <h3>3D Web Interface</h3>
+                    <p>Modern layouts that don't just inform, they captivate.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>SK<span class="highlight-blue">WEB</span>.AI</h3>
-                    <p>Constructing the future, one automation at a time.</p>
-                </div>
-                <div class="footer-contact">
-                    <h4>Interface</h4>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:skwebautomation@gmail.com">skwebautomation@gmail.com</a></p>
-                    <p><i class="fab fa-whatsapp"></i> +91 76656 76753</p>
-                    <div class="socials">
-                        <a href="https://www.facebook.com/profile.php?id=61585292122749&mibextid=ZbWKwL" target="_blank" class="social-glow"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-glow"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-glow"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="brand">
+                <h3>SKWEB.AI</h3>
+                <p>Building the future, one node at a time.</p>
             </div>
-            <p class="copyright">© 2025 SK Web Automation. Systems Online.</p>
+            <div class="links">
+                <a href="https://www.facebook.com/profile.php?id=61585292122749" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/917665676753" class="whatsapp-float pulse-animate" target="_blank">
+    <a href="https://wa.me/917665676753" class="whatsapp-btn">
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script type="module">
         import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
         createChat({
             webhookUrl: 'https://sallu1196.app.n8n.cloud/webhook/0c03602b-8df3-4efa-8820-9e793dc74a40/chat',
-            showWelcomeScreen: true,
-            title: 'Sofia (AI System)',
-            subtitle: 'SK Web Automation Unit',
-            initialMessages: ['System Online. 👋', 'I am Sofia. How may I assist with your automation protocols?'],
-            style: {
-                default: {
-                    background: '#02020a', /* Darker Background */
-                    color: '#ffffff',
-                    accent: '#00f3ff', /* Neon Blue Accent */
-                }
-            }
+            title: 'Sofia (AI Agent)',
+            style: { background: '#050505', color: '#ffffff', accent: '#00f3ff' }
         });
     </script>
-    
-    <script>
-        function toggleChat() {
-             const chatButton = document.querySelector('.n8n-chat-widget-toggle-button');
-             if (chatButton) chatButton.click();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
