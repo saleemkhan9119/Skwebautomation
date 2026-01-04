@@ -3,178 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SK Web Automation | The Luxury of Time</title>
+    <title>SK Web Automation | Premium AI & Automation</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+    <nav class="navbar">
+        <div class="logo">SK<span class="highlight">Web</span></div>
+        <a href="https://wa.me/917665676753" class="btn-primary">Book Consultation</a>
+    </nav>
+
+    <header class="hero">
         <div class="container">
-            <a href="#" class="logo">SK<span class="gold-text">Web</span></a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#about">Philosophy</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#process">Process</a></li>
-                </ul>
-                <button class="btn-gold" onclick="toggleChat()">Book Consultation</button>
-            </nav>
+            <div class="hero-content">
+                <p class="subtitle">Welcome to the Future</p>
+                <h1>The Luxury of <br><span class="highlight">True Automation</span></h1>
+                <p class="description">
+                    We craft premium digital experiences and AI agents like <strong>Sofia</strong> that give you back your time. Experience business at a higher level.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="toggleChat()">Talk to Sofia (AI)</button>
+                    <a href="#services" class="btn-secondary">Explore Services</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <span class="hero-subtitle">Welcome to the Future</span>
-            <h1>The Luxury of <br><span class="gold-text">True Automation</span></h1>
-            <p>We craft premium digital experiences and AI agents like Sofia that give you back your most valuable asset: Time. Experience business at a higher level.</p>
-            <div class="hero-btns">
-                <button class="btn-gold" onclick="toggleChat()">Talk to Sofia (AI)</button>
-                <button class="btn-outline" href="#services">Explore Services</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section bg-light">
-        <div class="container split-layout">
-            <div class="split-text">
-                <span class="hero-subtitle">Our Philosophy</span>
-                <h2>We Don't Just Write Code.<br>We Architect <span class="gold-text">Freedom.</span></h2>
-                <p>In a chaotic digital world, silence and efficiency are the ultimate luxuries. At SK Web Automation, we function like a 5-star concierge for your business.</p>
-                <p>We replace repetitive chaos with elegant, invisible workflows. Whether it's a website that stuns or an AI that sells, everything we build is designed to give you peace of mind.</p>
-                <div class="stats-row">
-                    <div class="stat">
-                        <h3 class="gold-text">500+</h3>
-                        <span>Projects</span>
-                    </div>
-                    <div class="stat">
-                        <h3 class="gold-text">10k+</h3>
-                        <span>Hours Saved</span>
-                    </div>
-                </div>
-            </div>
-            <div class="split-image">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Office">
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="section bg-dark">
+    <section class="section philosophy">
         <div class="container">
-            <div class="section-header">
-                <span class="hero-subtitle">Our Expertise</span>
-                <h2>Premium Services</h2>
+            <p class="section-label">Our Philosophy</p>
+            <h2>We Architect <span class="highlight">Freedom.</span></h2>
+            <p class="text-block">
+                We replace repetitive chaos with elegant, invisible workflows. Whether it's a website that stuns or an AI that sells, everything we build is designed for peace of mind.
+            </p>
+            <div class="stats-grid">
+                <div class="stat-item"><h3>500+</h3><p>Projects</p></div>
+                <div class="stat-item"><h3>10k+</h3><p>Hours Saved</p></div>
             </div>
+        </div>
+    </section>
+
+    <section class="section services" id="services">
+        <div class="container">
+            <p class="section-label">Our Expertise</p>
+            <h2>Premium Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <i class="fas fa-robot service-icon"></i>
+                    <i class="fas fa-robot icon"></i>
                     <h3>AI Concierge Agents</h3>
-                    <p>Intelligent digital employees like Sofia that handle your customers with the grace of a 5-star receptionist, 24/7.</p>
+                    <p>Intelligent digital employees like Sofia that handle customers 24/7 with 5-star grace.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-network-wired service-icon"></i>
+                    <i class="fas fa-network-wired icon"></i>
                     <h3>Workflow Automation</h3>
-                    <p>Seamless integration of your business apps (n8n, Zapier). Let the system do the heavy lifting while you focus on growth.</p>
+                    <p>Seamless integration of your business apps using n8n and Zapier.</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-gem service-icon"></i>
+                    <i class="fas fa-gem icon"></i>
                     <h3>Luxury Web Design</h3>
-                    <p>Websites that don't just inform, but captivate. Aesthetic precision meets technical excellence.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-chart-line service-icon"></i>
-                    <h3>Business Intelligence</h3>
-                    <p>Turn raw data into gold. We build dashboards that give you a bird's eye view of your empire.</p>
+                    <p>Websites that captivate. Aesthetic precision meets technical excellence.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="process" class="section bg-light">
+    <footer class="footer" id="contact">
         <div class="container">
-            <div class="section-header">
-                <span class="hero-subtitle">The Journey</span>
-                <h2 style="color: var(--primary);">How We Work</h2>
-            </div>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">01</div>
-                    <h3>Consultation</h3>
-                    <p>We sit down to understand your vision and bottlenecks.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>SK<span class="highlight">Web</span></h3>
+                    <p>Redefining efficiency through AI and Design.</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">02</div>
-                    <h3>The Blueprint</h3>
-                    <p>We design a custom automation architecture for you.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">03</div>
-                    <h3>Execution</h3>
-                    <p>We build, test, and deploy while you relax.</p>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:skwebautomation@gmail.com">skwebautomation@gmail.com</a></p>
+                    <p><i class="fab fa-whatsapp"></i> +91 76656 76753</p>
+                    <div class="socials">
+                        <a href="https://www.facebook.com/profile.php?id=61585292122749&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-col">
-                <a href="#" class="logo">SK<span class="gold-text">Web</span></a>
-                <p>Redefining business efficiency through the power of AI and Design.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Links</h4>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#" onclick="toggleChat()">Contact AI</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p>concierge@skwebautomation.online</p>
-                <p>+91 98765 43210</p>
-                <div class="socials">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 SK Web Automation. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2025 SK Web Automation. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <button id="chat-widget-btn" onclick="toggleChat()">
-        <i class="fas fa-comment-dots"></i>
-    </button>
+    <a href="https://wa.me/917665676753" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <div id="chat-window">
-        <div class="chat-header">
-            <div class="chat-avatar">S</div>
-            <div class="chat-info">
-                <h4>Sofia (AI)</h4>
-                <span>SK Automation Concierge</span>
-            </div>
-            <div style="margin-left: auto; cursor: pointer; color: var(--accent);" onclick="toggleChat()">✖</div>
-        </div>
-        <div id="messages">
-            <div class="msg msg-ai">
-                नमस्ते! Welcome to SK Web Automation. I am Sofia. How may I assist you in elevating your business today?
-            </div>
-        </div>
-        <div class="chat-input-area">
-            <input type="text" id="user-input" placeholder="Ask me anything..." onkeypress="handleEnter(event)">
-            <button id="send-btn" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+        createChat({
+            webhookUrl: 'https://sallu1196.app.n8n.cloud/webhook/0c03602b-8df3-4efa-8820-9e793dc74a40/chat',
+            showWelcomeScreen: true,
+            title: 'Sofia (AI Agent)',
+            subtitle: 'Powered by SK Web Automation',
+            initialMessages: ['Namaste! 🙏', 'I am Sofia. How can I help you automate your business today?'],
+            style: {
+                default: {
+                    background: '#050505',
+                    color: '#ffffff',
+                    accent: '#D4AF37',
+                }
+            }
+        });
+    </script>
 </body>
 </html>
