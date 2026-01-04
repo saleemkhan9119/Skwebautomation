@@ -1,95 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKWEB.AI | Next-Gen AI Automation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Master AI Agent | Central Intelligence System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="neural-bg"></div>
-    <div class="grid-overlay"></div>
+<!-- ================================================= -->
+<!-- 1. HERO -->
+<!-- ================================================= -->
+<section class="hero">
+  <div class="hero-box">
+    <h1>MASTER AI AGENT</h1>
+    <p>
+      A Central Intelligence System that handles<br>
+      Website • WhatsApp • Voice • Automation
+    </p>
 
-    <nav class="navbar">
-        <div class="logo">SKWEB<span>.AI</span></div>
-        <div class="nav-links">
-            <a href="https://wa.me/917665676753" class="btn-neon">Book Consultation</a>
-        </div>
-    </nav>
+    <button class="btn outline" onclick="openDemo()">Try Live AI Demo</button>
+    <a class="btn gold" href="https://wa.me/917665676753">Talk on WhatsApp</a>
+  </div>
+</section>
 
-    <header class="hero">
-        <div class="container hero-wrapper">
-            <div class="hero-text">
-                <span class="badge">SYSTEM READY: V2.0</span>
-                <h1>Architecting <br><span class="gradient-text">Digital Freedom</span></h1>
-                <p>We build autonomous AI agents like <strong>Sofia</strong> to replace repetitive chaos with elegant, 3D-integrated workflows.</p>
-                <div class="hero-actions">
-                    <button class="btn-main" onclick="openAIChat()">Talk to Sofia 🤖</button>
-                    <a href="mailto:skwebautomation@gmail.com" class="btn-outline">Send Signal</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="floating-container">
-                    <img src="https://images.unsplash.com/photo-1675557009475-43a05508110b?q=80&w=1000&auto=format&fit=crop" alt="AI Core" class="ai-core">
-                    <div class="core-glow"></div>
-                </div>
-            </div>
-        </div>
-    </header>
+<!-- ================================================= -->
+<!-- 2. PROBLEM -->
+<!-- ================================================= -->
+<section class="section">
+  <h2>The Problem Businesses Face Today</h2>
+  <p style="max-width:900px;margin:auto;opacity:.85">
+    Businesses lose customers every day due to missed calls, delayed replies,
+    language barriers, staff dependency, and disconnected systems.
+    Traditional chatbots are rule-based, fragile, and cannot think.
+  </p>
+</section>
 
-    <section class="services" id="systems">
-        <div class="container">
-            <h2 class="section-title">Cybernetic Systems</h2>
-            <div class="service-grid">
-                <div class="glass-card" data-tilt>
-                    <div class="card-icon"><i class="fas fa-microchip"></i></div>
-                    <h3>AI Concierge</h3>
-                    <p>Sofia handles your clients with 24/7 autonomous precision.</p>
-                </div>
-                <div class="glass-card" data-tilt>
-                    <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
-                    <h3>Workflow Neural</h3>
-                    <p>Integrating n8n & Zapier for invisible business efficiency.</p>
-                </div>
-                <div class="glass-card" data-tilt>
-                    <div class="card-icon"><i class="fas fa-vr-cardboard"></i></div>
-                    <h3>3D Web Interface</h3>
-                    <p>Modern layouts that don't just inform, they captivate.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ================================================= -->
+<!-- 3. WHY TRADITIONAL CHATBOTS FAIL -->
+<!-- ================================================= -->
+<section class="section">
+  <h2>Why Traditional Chatbots Fail</h2>
+  <div class="grid">
+    <div class="card">Predefined answers only</div>
+    <div class="card">No memory or context</div>
+    <div class="card">Cannot handle real conversations</div>
+    <div class="card">No human handover logic</div>
+    <div class="card">Separate systems for chat & calls</div>
+    <div class="card">High maintenance & low trust</div>
+  </div>
+</section>
 
-    <footer class="footer">
-        <div class="container footer-grid">
-            <div class="brand">
-                <h3>SKWEB.AI</h3>
-                <p>Building the future, one node at a time.</p>
-            </div>
-            <div class="links">
-                <a href="https://www.facebook.com/profile.php?id=61585292122749" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </footer>
+<!-- ================================================= -->
+<!-- 4. WHAT IS MASTER AI AGENT -->
+<!-- ================================================= -->
+<section class="section">
+  <h2>What is Master AI Agent?</h2>
+  <p style="max-width:950px;margin:auto;opacity:.9">
+    Master AI Agent is not a chatbot.  
+    It is a <b>central AI brain</b> that understands intent, context, industry,
+    and communication channel — and responds intelligently like a trained human.
+  </p>
+</section>
 
-    <a href="https://wa.me/917665676753" class="whatsapp-btn">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+<!-- ================================================= -->
+<!-- 5. 3D AI BRAIN VISUAL -->
+<!-- ================================================= -->
+<section class="three-section">
+  <canvas id="aiCanvas"></canvas>
+</section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    <script type="module">
-        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-        createChat({
-            webhookUrl: 'https://sallu1196.app.n8n.cloud/webhook/0c03602b-8df3-4efa-8820-9e793dc74a40/chat',
-            title: 'Sofia (AI Agent)',
-            style: { background: '#050505', color: '#ffffff', accent: '#00f3ff' }
-        });
-    </script>
-    <script src="script.js"></script>
+<!-- ================================================= -->
+<!-- 6. HOW IT WORKS -->
+<!-- ================================================= -->
+<section class="section">
+  <h2>How Master AI Agent Works</h2>
+  <div class="grid">
+    <div class="card">User sends message or makes a call</div>
+    <div class="card">Master AI understands intent</div>
+    <div class="card">Industry logic is applied</div>
+    <div class="card">AI responds in correct language</div>
+    <div class="card">Human handover if needed</div>
+    <div class="card">Conversation stored & improved</div>
+  </div>
+</section>
+
+<!-- ================================================= -->
+<!-- 7. CORE CAPABILITIES -->
+<!-- ================================================= -->
+<section class="section">
+  <h2>Core Capabilities</h2>
+  <div class="grid">
+    <div class="card">Website AI Chat Agent</div>
+    <div class="card">WhatsApp AI Automation</div>
+    <div class="card">Voice Call AI Agent</div>
+    <div class="card">Multi-language (Hindi / English)</div>
+    <div class="card">Context Memory Engine</div>
+    <div class="card">Human Handover Control</div>
+  </div>
+</section>
+
+<!-- ================================================= -->
+<!-- 8. INDUSTRY USE CASES -->
+<!-- ================================================= -->
+<section class="section">
+  <h2>Industry Use-Cases</h2>
+  <div class="grid">
+    <div class="card">Hotel & Booking AI</div>
+    <div class="card">Hospital & Appointment AI</div>
+    <div class="card">Restaurant Ordering AI</div>
+    <div class="card">Real Estate Lead AI</div>
+    <div class="card">E-commerce Support AI</div>
+    <div class="card">Custom Business AI</div>
+  </div>
+</section>
+
+<!-- ================================================= -->
+<!-- 9. LIVE DEMO EXPLANATION -->
+<!-- ================================================= -->
+<section class="section">
+  <h2>Live AI Demo</h2>
+  <p style="max-width:900px;margin:auto;opacity:.85">
+    Below is a real working demo of Master AI Agent.
+    You can switch industries and test how the AI behaves.
+    Demo mode has limited responses to protect system resources.
+  </p>
+</section>
+
+<!-- ================================================= -->
+<!-- 10. DEMO CHAT BOX -->
+<!-- ================================================= -->
+<div id="demoBox">
+  <header>
+    Master AI Agent – Live Demo
+    <span onclick="closeDemo()">✕</span>
+  </header>
+
+  <select id="industry">
+    <option value="generic">Generic AI</option>
+    <option value="hotel">Hotel AI</option>
+    <option value="hospital">Hospital AI</option>
+    <option value="restaurant">Restaurant AI</option>
+  </select>
+
+  <div id="messages"></div>
+  <input id="userInput" placeholder="Type your message and press Enter">
+</div>
+
+<!-- ================================================= -->
+<!-- 11. TRUST & CONTROL -->
+<!-- ================================================= -->
+<section class="section">
+  <h2>Trust, Control & Safety</h2>
+  <div class="grid">
+    <div class="card">No hallucinated data</div>
+    <div class="card">Demo & production separation</div>
+    <div class="card">Human override available</div>
+    <div class="card">Conversation logging</div>
+    <div class="card">Secure API workflows</div>
+    <div class="card">Scalable architecture</div>
+  </div>
+</section>
+
+<!-- ================================================= -->
+<!-- 12. FUTURE ROADMAP -->
+<!-- ================================================= -->
+<section class="section">
+  <h2>Future Roadmap</h2>
+  <div class="grid">
+    <div class="card">Admin Dashboard</div>
+    <div class="card">Analytics & Insights</div>
+    <div class="card">Voice AI Outbound Calls</div>
+    <div class="card">Payment & Booking AI</div>
+    <div class="card">White-Label SaaS</div>
+    <div class="card">Affiliate System</div>
+  </div>
+</section>
+
+<!-- ================================================= -->
+<!-- 13. FINAL CTA -->
+<!-- ================================================= -->
+<section class="section">
+  <h2>Ready to Build Your AI System?</h2>
+  <p style="opacity:.85">
+    Master AI Agent can be customized for your business within days.
+  </p>
+  <a class="btn gold" href="https://wa.me/917665676753">Request Full Demo</a>
+</section>
+
+<!-- ================================================= -->
+<!-- FOOTER -->
+<!-- ================================================= -->
+<footer>
+  © 2026 Master AI Agent • Built by SK Web Automation<br>
+  Website • WhatsApp • Voice • Automation
+</footer>
+
+<script src="app.js"></script>
+<script src="three-ai.js"></script>
 </body>
 </html>
