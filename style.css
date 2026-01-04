@@ -1,231 +1,115 @@
-/* =========================================
-   CYBERPUNK / FUTURISTIC THEME VARIABLES
-========================================= */
-:root {
-    --bg-dark: #02020a; /* Deepest space black */
-    --bg-card: rgba(10, 10, 20, 0.7); /* Glassmorphism bg */
-    --neon-blue: #00f3ff; /* Cyan/Electric Blue */
-    --neon-gold: #FFD700; /* Electric Gold */
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0d0; /* Blue-tinted grey */
-    
-    --font-tech: 'Orbitron', sans-serif; /* Robotic font for headings */
-    --font-body: 'Rajdhani', sans-serif; /* Clean tech font for body */
+:root{
+  --gold:#D4AF37;
+  --dark:#050505;
+  --glass:rgba(255,255,255,.08);
 }
 
-/* Base Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
-    font-family: var(--font-body);
-    line-height: 1.6;
-    overflow-x: hidden;
-    /* Circuit board pattern background */
-    background-image: 
-        radial-gradient(circle at 20% 80%, rgba(0, 243, 255, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 30%);
-        /* Note: A real circuit pattern image would be better here, but using gradients for now */
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,#111,#000);
+  color:#fff;
 }
 
-/* Digital Grid Overlay - gives it a tech feel */
-.grid-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: 
-        linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-    background-size: 30px 30px;
-    pointer-events: none; z-index: -1;
+h1,h2{
+  font-family:'Cinzel',serif;
+  color:var(--gold);
+  letter-spacing:1px;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.highlight-blue { color: var(--neon-blue); text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); }
-.highlight-gold { color: var(--neon-gold); text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-.glow-text { color: var(--neon-blue); text-shadow: 0 0 5px var(--neon-blue); letter-spacing: 2px; text-transform: uppercase; font-weight: 700;}
-.center-text { text-align: center; }
-
-/* =========================
-   NAVBAR
-========================= */
-.navbar {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 15px 5%; background: rgba(2, 2, 10, 0.8);
-    backdrop-filter: blur(10px); /* Glass effect */
-    position: sticky; top: 0; z-index: 1000;
-    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
-}
-.logo { font-family: var(--font-tech); font-size: 1.8rem; font-weight: 700; letter-spacing: 1px; }
-
-/* =========================
-   FUTURISTIC BUTTONS
-========================= */
-.btn-neon, .btn-neon-blue {
-    padding: 12px 30px; font-family: var(--font-tech); font-weight: 700;
-    text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer;
-    position: relative; overflow: hidden; transition: 0.4s;
-    background: transparent; color: var(--neon-blue);
-    border: 2px solid var(--neon-blue);
-    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2), inset 0 0 10px rgba(0, 243, 255, 0.1);
-}
-.btn-neon:hover, .btn-neon-blue:hover {
-    background: var(--neon-blue); color: #000;
-    box-shadow: 0 0 30px rgba(0, 243, 255, 0.6);
-}
-.btn-transparent {
-    padding: 12px 30px; font-family: var(--font-tech); font-weight: 700;
-    text-transform: uppercase; letter-spacing: 1px; color: #fff;
-    border: 2px solid rgba(255,255,255,0.3); transition: 0.3s;
-    background: rgba(0,0,0,0.3);
-}
-.btn-transparent:hover { border-color: var(--neon-gold); color: var(--neon-gold); box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); }
-
-/* =========================
-   HERO SECTION (The 3D part)
-========================= */
-.hero { min-height: 90vh; display: flex; align-items: center; padding: 50px 0; overflow: hidden; }
-.hero-container { display: flex; align-items: center; justify-content: space-between; }
-.hero-content { flex: 1; max-width: 600px; z-index: 2; }
-
-.hero h1 {
-    font-family: var(--font-tech); font-size: 3.8rem; line-height: 1.1; margin-bottom: 25px;
-    text-transform: uppercase;
-}
-.description { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 35px; max-width: 500px; }
-.hero-buttons { display: flex; gap: 20px; }
-
-/* 3D Image Styling */
-.hero-3d-image-wrapper {
-    flex: 1; display: flex; justify-content: center; align-items: center;
-    position: relative; perspective: 1000px; /* Essential for 3D feel */
-}
-/* The glowing circle behind the robot */
-.glow-circle {
-    position: absolute; width: 400px; height: 400px; background: var(--neon-blue);
-    filter: blur(150px); opacity: 0.3; z-index: 1;
-    animation: pulse 5s infinite alternate;
-}
-.hero-3d-image {
-    width: 100%; max-width: 500px; height: auto;
-    transform-style: preserve-3d; z-index: 2;
-    /* Making it look 3D with drop shadow */
-    filter: drop-shadow(0 20px 40px rgba(0, 243, 255, 0.4));
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(to bottom,rgba(0,0,0,.4),rgba(0,0,0,.95)),
+  url("https://images.unsplash.com/photo-1518770660439-4636190af475") center/cover fixed;
 }
 
-/* ANIMATIONS */
-/* Floating Animation */
-.floating-animate { animation: float 6s ease-in-out infinite; }
-@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-25px); } }
-/* Pulse Animation */
-@keyframes pulse { 0% { opacity: 0.2; transform: scale(1); } 100% { opacity: 0.4; transform: scale(1.2); } }
-.pulse-animate { animation: pulse-btn 2s infinite; }
-@keyframes pulse-btn { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-
-/* =========================
-   SECTIONS & PHILOSOPHY
-========================= */
-.section { padding: 100px 0; }
-.section h2 { font-family: var(--font-tech); font-size: 3rem; margin-bottom: 30px; text-transform: uppercase;}
-
-.philosophy-container { display: flex; align-items: center; gap: 60px; }
-.text-side { flex: 1; }
-.image-side-3d { flex: 1; perspective: 1000px; }
-.tilt-image {
-    width: 100%; border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    filter: saturate(1.2) contrast(1.1); /* Make colors pop */
-}
-.tilt-image:hover {
-    transform: rotateX(5deg) rotateY(-5deg) translateZ(20px); /* Simple 3D tilt on hover */
-    box-shadow: -20px 20px 50px rgba(0, 243, 255, 0.3);
+.hero-box{
+  background:var(--glass);
+  backdrop-filter:blur(20px);
+  padding:80px;
+  border-radius:30px;
+  text-align:center;
 }
 
-.stats-grid { display: flex; gap: 50px; margin-top: 40px; }
-.stat-item h3 { font-size: 3.5rem; font-family: var(--font-tech); color: var(--neon-blue); text-shadow: 0 0 15px var(--neon-blue); }
+.btn{
+  padding:14px 36px;
+  border-radius:40px;
+  margin:10px;
+  cursor:pointer;
+}
 
-/* =========================
-   SERVICES (3D TILT CARDS)
-========================= */
-.services-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px; margin-top: 50px;
-}
-/* 3D Tilt Effect Setup */
-.tilt-card {
-    perspective: 1000px; transform-style: preserve-3d;
-}
-.card-content {
-    background: var(--bg-card); /* Glassmorphism background */
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    padding: 40px; border-radius: 20px;
-    border: 1px solid rgba(0, 243, 255, 0.1);
-    transition: all 0.5s ease;
-    height: 100%; transform: translateZ(0); /* Hardware acceleration */
-}
-/* The 3D Tilt Hover Effect */
-.tilt-card:hover .card-content {
-    transform: rotateX(10deg) rotateY(-10deg) translateZ(30px); /* Lifts up and tilts */
-    border-color: var(--neon-blue);
-    box-shadow: 
-        0 0 30px rgba(0, 243, 255, 0.2),
-        inset 0 0 20px rgba(0, 243, 255, 0.1);
-}
-.icon-glow-blue { font-size: 3rem; color: var(--neon-blue); margin-bottom: 20px; filter: drop-shadow(0 0 10px var(--neon-blue)); }
-.icon-glow-gold { font-size: 3rem; color: var(--neon-gold); margin-bottom: 20px; filter: drop-shadow(0 0 10px var(--neon-gold)); }
-.service-card h3 { font-family: var(--font-tech); font-size: 1.6rem; margin-bottom: 15px; letter-spacing: 1px; }
-.service-card p { color: var(--text-secondary); }
+.btn.gold{background:var(--gold);color:#000}
+.btn.outline{border:1px solid var(--gold);color:var(--gold)}
 
-/* =========================
-   FOOTER & SOCIALS
-========================= */
-.footer { background: #010105; padding: 80px 0 30px; border-top: 1px solid rgba(0, 243, 255, 0.1); position: relative; overflow: hidden;}
-/* Add a top glow to footer */
-.footer::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
-}
-.footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; margin-bottom: 40px;}
-.footer-brand h3 { font-family: var(--font-tech); font-size: 1.8rem; margin-bottom: 15px; }
-.footer-contact h4 { color: var(--neon-gold); margin-bottom: 20px; font-family: var(--font-tech); letter-spacing: 1px; }
-.footer-contact p { color: var(--text-secondary); margin-bottom: 12px; font-size: 1.1rem; }
-.footer-contact i { color: var(--neon-blue); margin-right: 10px; width: 20px; }
+.section{padding:120px 20px;text-align:center}
 
-.socials { margin-top: 25px; display: flex; gap: 20px; }
-.social-glow {
-    width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;
-    border-radius: 50%; background: rgba(0, 243, 255, 0.1); color: var(--neon-blue);
-    font-size: 1.2rem; transition: 0.3s; border: 1px solid rgba(0, 243, 255, 0.3);
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  max-width:1200px;
+  margin:auto;
 }
-.social-glow:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 20px var(--neon-blue); transform: translateY(-5px); }
-.copyright { text-align: center; color: #555; margin-top: 40px; font-size: 0.9rem; border-top: 1px solid #111; padding-top: 25px; font-family: var(--font-tech); letter-spacing: 1px; }
 
-/* WhatsApp Float */
-.whatsapp-float {
-    position: fixed; bottom: 30px; right: 30px; background: #25d366; color: #fff;
-    width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-size: 32px; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.5); transition: 0.3s;
+.card{
+  background:#0d0d0d;
+  padding:40px;
+  border-radius:25px;
+  border:1px solid #222;
 }
-.whatsapp-float:hover { transform: scale(1.1); }
 
-/* =========================
-   MOBILE RESPONSIVENESS
-========================= */
-@media (max-width: 900px) {
-    .hero-container, .philosophy-container { flex-direction: column; text-align: center; }
-    .hero-content, .text-side { max-width: 100%; margin-bottom: 50px; }
-    .hero-buttons { justify-content: center; }
-    .hero-3d-image-wrapper { width: 100%; }
-    .hero h1 { font-size: 2.8rem; }
-    .stats-grid { justify-content: center; }
-    .footer-content { flex-direction: column; text-align: center; align-items: center; }
+.three-section{
+  height:110vh;
 }
-@media (max-width: 480px) {
-    .hero h1 { font-size: 2.2rem; }
-    .hero-buttons { flex-direction: column; }
-    .btn-neon, .btn-transparent { width: 100%; }
-    .section h2 { font-size: 2.2rem; }
-    /* On very small screens, tone down the 3D tilt as it can be jerky */
-    .tilt-card:hover .card-content { transform: translateY(-10px); }
+
+#aiCanvas{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+/* DEMO CHAT */
+#demoBox{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:340px;
+  background:#0b0b0b;
+  border:1px solid var(--gold);
+  border-radius:20px;
+  display:none;
+  flex-direction:column;
+}
+
+#demoBox header{
+  background:var(--gold);
+  color:#000;
+  padding:14px;
+  font-weight:600;
+  display:flex;
+  justify-content:space-between;
+}
+
+#messages{
+  padding:12px;
+  height:240px;
+  overflow-y:auto;
+  font-size:14px;
+}
+
+#demoBox input,select{
+  padding:12px;
+  border:none;
+  outline:none;
+  background:#111;
+  color:#fff;
+}
+
+footer{
+  padding:40px;
+  text-align:center;
+  opacity:.6;
 }
